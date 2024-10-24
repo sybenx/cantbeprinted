@@ -1,6 +1,6 @@
 {
   "name": "Can't Be Printed",
-  "short_name": "Can't ₿e",
+  "short_name": "CantPrint",
   "icons": [
     {
       "src": "/favicon/web-app-manifest-192x192.png",
@@ -15,7 +15,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#000000",
-  "background_color": "#000000",
+  "theme_color": "#ffffff",
+  "background_color": "#478bcb",
   "display": "standalone"
 }
