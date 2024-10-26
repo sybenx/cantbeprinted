@@ -36,8 +36,6 @@
             line-height: 1.6;
         }
 
-        /* [Previous header and nav styles remain the same] */
-
         .main-content {
             max-width: 1200px;
             margin: 0 auto;
@@ -65,17 +63,29 @@
         }
 
         .video-section {
-            margin-bottom: 4rem;
+            margin: 6rem auto 4rem;
             position: relative;
+            max-width: 1000px;
+            width: 90%;
         }
 
         .video-container {
-            max-width: 900px;
-            margin: 0 auto;
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
             border-radius: 1rem;
             overflow: hidden;
             box-shadow: 0 20px 40px rgba(255, 149, 0, 0.15);
-            position: relative;
+            background: var(--card-bg);
+        }
+
+        .video-container .responsive-iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
         }
 
         .video-container::after {
@@ -87,6 +97,7 @@
             bottom: 0;
             background: radial-gradient(circle at center, var(--gradient-start), var(--gradient-end));
             pointer-events: none;
+            z-index: 1;
         }
 
         .timeline {
@@ -174,45 +185,6 @@
             font-weight: 700;
             color: var(--primary-color);
             margin-bottom: 0.5rem;
-        }
-
-        .interactive-examples {
-            margin: 6rem 0;
-        }
-
-        .example-tabs {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            overflow-x: auto;
-            padding-bottom: 1rem;
-        }
-
-        .tab-button {
-            padding: 1rem 2rem;
-            background: var(--card-bg);
-            border: none;
-            color: var(--text-color);
-            border-radius: 0.5rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-        }
-
-        .tab-button.active {
-            background: var(--primary-color);
-            color: var(--background);
-        }
-
-        .tab-content {
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 1rem;
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
         }
 
         .practical-applications {
@@ -311,12 +283,10 @@
             }
         }
 
-        /* Add smooth scrolling */
         html {
             scroll-behavior: smooth;
         }
 
-        /* Add scroll animation trigger */
         .scroll-trigger {
             opacity: 0;
             transform: translateY(20px);
@@ -330,8 +300,6 @@
     </style>
 </head>
 <body>
-    <!-- [Previous header remains the same] -->
-
     <main class="main-content">
         <section class="intro-section scroll-trigger">
             <h1>The Evolution of Money</h1>
@@ -343,6 +311,7 @@
                 <iframe 
                     class="responsive-iframe"
                     src="https://www.youtube.com/embed/wp2SonEgquQ?modestbranding=1&controls=1&showinfo=0&rel=0" 
+                    title="Bitcoin in Witsand"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowfullscreen>
                 </iframe>
@@ -399,21 +368,6 @@
                     <p>Annual remittance market size</p>
                 </div>
             </div>
-        </section>
-
-        <section class="interactive-examples scroll-trigger">
-            <h2>Real-World Applications</h2>
-            <div class="example-tabs">
-                <button class="tab-button active">Savings</button>
-                <button class="tab-button">Remittances</button>
-                <button class="tab-button">Business</button>
-                <button class="tab-button">Technology</button>
-            </div>
-            <div class="tab-content active">
-                <h3>Preserving Value Through Time</h3>
-                <p>A software developer in Argentina preserved their savings despite 100%+ annual inflation by adopting sound money principles. After four years, they were able to purchase a home outright.</p>
-            </div>
-            <!-- Additional tab contents -->
         </section>
 
         <section class="practical-applications scroll-trigger">
@@ -484,49 +438,6 @@
 
         document.querySelectorAll('.scroll-trigger').forEach(element => {
             observer.observe(element);
-        });
-
-        // Tab functionality
-        const tabButtons = document.querySelectorAll('.tab-button');
-        const tabContents = document.querySelectorAll('.tab-content');
-
-        const tabData = {
-            'Savings': {
-                title: 'Preserving Value Through Time',
-                content: 'A software developer in Argentina preserved their savings despite 100%+ annual inflation by adopting sound money principles. After four years, they were able to purchase a home outright.'
-            },
-            'Remittances': {
-                title: 'Efficient Cross-Border Transfers',
-                content: 'A family in the Philippines reduced their remittance costs from 12% to less than 1% by using new financial technology, allowing them to save enough to start a small business.'
-            },
-            'Business': {
-                title: 'Growing Through Sound Money',
-                content: 'An online marketplace in Nigeria expanded to five African countries by accepting and holding sound money, protecting their revenue from local currency depreciation.'
-            },
-            'Technology': {
-                title: 'Building the Future',
-                content: 'A team of developers created a decentralized lending platform, enabling people in 45 countries to access loans without traditional banking infrastructure.'
-            }
-        };
-
-        tabButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Remove active class from all buttons and contents
-                tabButtons.forEach(btn => btn.classList.remove('active'));
-                tabContents.forEach(content => content.classList.remove('active'));
-
-                // Add active class to clicked button
-                button.classList.add('active');
-
-                // Update content
-                const tabContent = document.querySelector('.tab-content');
-                const data = tabData[button.textContent];
-                tabContent.innerHTML = `
-                    <h3>${data.title}</h3>
-                    <p>${data.content}</p>
-                `;
-                tabContent.classList.add('active');
-            });
         });
 
         // Timeline animation
