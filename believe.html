@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover why Bitcoin represents the future of sound money">
+    <title>Can't ₿e Printed - Believe</title>
+    
+    <!-- Favicon links -->
+    <link rel="icon" type="image/png" href="/favicon/favicon-48x48.png" sizes="48x48" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Bitcoin Rocks" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #ff9500;
+            --primary-hover: #ffd700;
+            --background: #000000;
+            --text-color: #ffffff;
+            --footer-text: #888888;
+            --header-bg: rgba(0, 0, 0, 0.9);
+            --card-bg: rgba(255, 255, 255, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--background);
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: var(--text-color);
+        }
+        
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.25rem;
+            background: var(--header-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 8rem 2rem 4rem;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .hero-section {
+            max-width: 800px;
+            margin: 0 auto 6rem;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+            background: linear-gradient(45deg, var(--primary-color), var(--primary-hover));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--footer-text);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .beliefs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .belief-card {
+            background: var(--card-bg);
+            border-radius: 1rem;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .belief-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--primary-hover));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .belief-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 149, 0, 0.1);
+        }
+
+        .belief-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .belief-number {
+            font-size: 4rem;
+            font-weight: 800;
+            color: rgba(255, 149, 0, 0.1);
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+        }
+
+        .belief-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .belief-card p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .quote-section {
+            max-width: 800px;
+            margin: 6rem auto;
+            text-align: center;
+            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: 1rem;
+        }
+
+        .quote-text {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .quote-author {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.25rem 2.5rem;
+            background-color: var(--primary-color);
+            color: var(--background);
+            text-decoration: none;
+            border-radius: 2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 149, 0, 0.2);
+        }
+
+        .footer {
+            padding: 1.5rem;
+            background: var(--header-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-text {
+            color: var(--footer-text);
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+
+        @keyframes fadeIn {
+            from { 
+                opacity: 0; 
+                transform: translateY(20px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 6rem 1rem 4rem;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .nav-links a {
+                font-size: 0.9rem;
+            }
+            
+            .quote-text {
+                font-size: 1.25rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .main-content {
+                padding-top: 8rem;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .belief-card h3 {
+                font-size: 1.3rem;
+            }
+            
+            .belief-number {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <a href="/" class="logo">Can't ₿e Printed</a>
+            <nav class="nav-links">
+                <a href="/">Home</a>
+                <a href="/learn">Learn</a>
+                <a href="/believe">Believe</a>
+                <a href="https://simple.wikipedia.org/wiki/Bitcoin">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="hero-section">
+            <h1 class="hero-title">Why We Believe</h1>
+            <p class="hero-subtitle">
+                Bitcoin represents more than just digital currency—it's a revolution in the very concept of money. Here's why we believe it matters.
+            </p>
+        </section>
+
+        <section class="beliefs-grid">
+            <div class="belief-card">
+                <span class="belief-number">01</span>
+                <h3>Sound Money Revolution</h3>
+                <p>For the first time in history, we have a form of money that can't be debased, printed at will, or controlled by any single entity. This mathematical certainty creates true financial sovereignty.</p>
+            </div>
+
+            <div class="belief-card">
+                <span class="belief-number">02</span>
+                <h3>Digital Scarcity</h3>
+                <p>Bitcoin solved the double-spend problem and created true digital scarcity. Its fixed supply of 21 million coins makes it the hardest form of money ever invented.</p>
+            </div>
+
+            <div class="belief-card">
+                <span class="belief-number">03</span>
+                <h3>Network Effect</h3>
+                <p>Every new user strengthens the network. As adoption grows, Bitcoin's value proposition as a global, neutral monetary network becomes increasingly self-evident.</p>
+            </div>
+
+            <div class="belief-card">
+                <span class="belief-number">04</span>
+                <h3>True Ownership</h3>
+                <p>Bitcoin enables genuine ownership of your wealth without intermediaries. When properly secured, your bitcoin cannot be seized, frozen, or confiscated.</p>
+            </div>
+
+            <div class="belief-card">
+                <span class="belief-number">05</span>
+                <h3>Global Access</h3>
+                <p>Anyone with an internet connection can participate in the Bitcoin network. It brings financial services to the billions of unbanked and underbanked worldwide.</p>
+            </div>
+
+            <div class="belief-card">
+                <span class="belief-number">06</span>
+                <h3>Unstoppable Innovation</h3>
+                <p>The open-source nature of Bitcoin drives constant innovation. Layer 2 solutions like Lightning Network show how the protocol can evolve while maintaining core principles.</p>
+            </div>
+        </section>
+
+        <section class="quote-section">
+            <p class="quote-text">"Bitcoin is Magic."</p>
+            <p class="quote-author">?</p>
+        </section>
+
+        <section class="cta-section">
+            <a href="/learn" class="cta-button">Start Learning</a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <span class="footer-text">© 2024 Can't ₿e Printed. Download the Revolution. Created by <a href="https://njump.me/npub175rnagjgxtvwvfrdytkqkkn4h062zf2cuwkx0jc8xc9nga895s8qgsef5g" class="footer-text">Aaron Herbst</a></span>
+    </footer>
+</body>
+</html>
