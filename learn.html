@@ -109,6 +109,25 @@
             border: none;
         }
 
+        .pdf-section {
+            margin: 4rem auto;
+            max-width: 900px;
+        }
+
+        .pdf-container {
+            width: 100%;
+            height: 800px;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(255, 149, 0, 0.15);
+        }
+
+        .pdf-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
         .history-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -203,6 +222,10 @@
             .history-grid {
                 grid-template-columns: 1fr;
             }
+
+            .pdf-container {
+                height: 500px;
+            }
         }
     </style>
 </head>
@@ -226,6 +249,17 @@
                     class="responsive-iframe"
                     src="https://www.youtube.com/embed/wp2SonEgquQ?modestbranding=1&controls=1&showinfo=0&rel=0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+        <section class="pdf-section">
+            <div class="pdf-container">
+                <iframe 
+                    class="pdf-iframe"
+                    src="https://docs.google.com/viewerng/viewer?url=https://cantbeprinted.com/files/bitcoin21pages.pdf&embedded=true"
+                    frameborder="0"
                     allowfullscreen>
                 </iframe>
             </div>
