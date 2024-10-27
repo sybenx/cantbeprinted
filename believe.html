@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Discover why Bitcoin represents the future of sound money">
-    <title>Can't ₿e Printed - Believe</title>
+    <meta name="description" content="Discover the vision of Satoshi Nakamoto and the birth of Bitcoin">
+    <title>Can't ₿e Printed</title>
     
     <!-- Favicon links -->
     <link rel="icon" type="image/png" href="/favicon/favicon-48x48.png" sizes="48x48" />
@@ -109,8 +109,8 @@
         }
 
         .hero-section {
-            max-width: 800px;
-            margin: 0 auto 6rem;
+            max-width: 900px;
+            margin: 0 auto 4rem;
             text-align: center;
         }
 
@@ -130,66 +130,107 @@
             color: var(--footer-text);
             line-height: 1.6;
             margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .beliefs-grid {
+        .video-section {
+            max-width: 900px;
+            margin: 0 auto 6rem;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(255, 149, 0, 0.15);
+        }
+
+        .responsive-iframe {
+            width: 100%;
+            aspect-ratio: 16/9;
+            border: none;
+            display: block;
+        }
+
+        .timestamp {
+            color: var(--primary-color);
+            font-family: monospace;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .quote-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 4rem auto;
         }
 
-        .belief-card {
+        .quote-card {
             background: var(--card-bg);
             border-radius: 1rem;
             padding: 2rem;
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            border: 1px solid rgba(255, 149, 0, 0.1);
         }
 
-        .belief-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-color), var(--primary-hover));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.3s ease;
-        }
-
-        .belief-card:hover {
+        .quote-card:hover {
             transform: translateY(-5px);
+            border-color: var(--primary-color);
             box-shadow: 0 10px 20px rgba(255, 149, 0, 0.1);
         }
 
-        .belief-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .belief-number {
-            font-size: 4rem;
-            font-weight: 800;
-            color: rgba(255, 149, 0, 0.1);
-            position: absolute;
-            top: 1rem;
-            right: 1.5rem;
-        }
-
-        .belief-card h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-        }
-
-        .belief-card p {
+        .quote-text {
+            font-size: 1.1rem;
             line-height: 1.6;
             margin-bottom: 1rem;
+            font-family: monospace;
+        }
+
+        .context {
+            color: var(--footer-text);
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: 1rem;
+        }
+
+        .timeline-item {
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 1px;
+            height: 100%;
+            background: var(--primary-color);
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-date {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
         }
 
         .quote-section {
@@ -201,16 +242,11 @@
             border-radius: 1rem;
         }
 
-        .quote-text {
-            font-size: 1.5rem;
-            font-style: italic;
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-
         .quote-author {
             color: var(--primary-color);
             font-weight: 600;
+            margin-top: 1rem;
+            display: block;
         }
 
         .cta-section {
@@ -285,7 +321,7 @@
             }
             
             .quote-text {
-                font-size: 1.25rem;
+                font-size: 1rem;
             }
         }
 
@@ -303,12 +339,12 @@
                 font-size: 2rem;
             }
             
-            .belief-card h3 {
-                font-size: 1.3rem;
+            .timeline-item {
+                padding-left: 1.5rem;
             }
             
-            .belief-number {
-                font-size: 3rem;
+            .quote-card {
+                padding: 1.5rem;
             }
         }
     </style>
@@ -328,57 +364,72 @@
 
     <main class="main-content">
         <section class="hero-section">
-            <h1 class="hero-title">Why We Believe</h1>
+            <h1 class="hero-title">The Vision of Satoshi</h1>
             <p class="hero-subtitle">
-                Bitcoin represents more than just digital currency—it's a revolution in the very concept of money. Here's why we believe it matters.
+                In 2008, an unknown person or group using the pseudonym Satoshi Nakamoto introduced Bitcoin to the world. Their vision of decentralized, sound money continues to reshape our understanding of what money can be.
             </p>
         </section>
 
-        <section class="beliefs-grid">
-            <div class="belief-card">
-                <span class="belief-number">01</span>
-                <h3>Sound Money Revolution</h3>
-                <p>For the first time in history, we have a form of money that can't be debased, printed at will, or controlled by any single entity. This mathematical certainty creates true financial sovereignty.</p>
+        <section class="video-section">
+            <div class="video-container">
+                <iframe 
+                    class="responsive-iframe"
+                    src="https://www.youtube.com/embed/iIWViimqRMU?modestbranding=1&controls=1&showinfo=0&rel=0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+        <section class="quote-grid">
+            <div class="quote-card">
+                <div class="timestamp">2009-01-03</div>
+                <p class="quote-text">"The Times 03/Jan/2009 Chancellor on brink of second bailout for banks"</p>
+                <p class="context">The Bitcoin genesis block contained this headline, forever timestamping the motivation behind Bitcoin's creation.</p>
             </div>
 
-            <div class="belief-card">
-                <span class="belief-number">02</span>
-                <h3>Digital Scarcity</h3>
-                <p>Bitcoin solved the double-spend problem and created true digital scarcity. Its fixed supply of 21 million coins makes it the hardest form of money ever invented.</p>
+            <div class="quote-card">
+                <div class="timestamp">2009-02-11</div>
+                <p class="quote-text">"The root problem with conventional currency is all the trust that's required to make it work..."</p>
+                <p class="context">Satoshi explains why the world needs a trustless form of money.</p>
             </div>
 
-            <div class="belief-card">
-                <span class="belief-number">03</span>
-                <h3>Network Effect</h3>
-                <p>Every new user strengthens the network. As adoption grows, Bitcoin's value proposition as a global, neutral monetary network becomes increasingly self-evident.</p>
+            <div class="quote-card">
+                <div class="timestamp">2010-07-29</div>
+                <p class="quote-text">"If you don't believe me or don't get it, I don't have time to try to convince you, sorry."</p>
+                <p class="context">Satoshi's response when questioned about Bitcoin's security model.</p>
+            </div>
+        </section>
+
+        <section class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">October 31, 2008</div>
+                <p>Satoshi Nakamoto publishes the Bitcoin whitepaper, introducing a revolutionary peer-to-peer electronic cash system.</p>
             </div>
 
-            <div class="belief-card">
-                <span class="belief-number">04</span>
-                <h3>True Ownership</h3>
-                <p>Bitcoin enables genuine ownership of your wealth without intermediaries. When properly secured, your bitcoin cannot be seized, frozen, or confiscated.</p>
+            <div class="timeline-item">
+                <div class="timeline-date">January 3, 2009</div>
+                <p>The Bitcoin network goes live with the genesis block, containing a powerful message about the banking system.</p>
             </div>
 
-            <div class="belief-card">
-                <span class="belief-number">05</span>
-                <h3>Global Access</h3>
-                <p>Anyone with an internet connection can participate in the Bitcoin network. It brings financial services to the billions of unbanked and underbanked worldwide.</p>
+            <div class="timeline-item">
+                <div class="timeline-date">January 12, 2009</div>
+                <p>The first Bitcoin transaction occurs between Satoshi and Hal Finney, marking the beginning of the Bitcoin economy.</p>
             </div>
 
-            <div class="belief-card">
-                <span class="belief-number">06</span>
-                <h3>Unstoppable Innovation</h3>
-                <p>The open-source nature of Bitcoin drives constant innovation. Layer 2 solutions like Lightning Network show how the protocol can evolve while maintaining core principles.</p>
+            <div class="timeline-item">
+                <div class="timeline-date">December 12, 2010</div>
+                <p>Satoshi's last known public post, leaving Bitcoin in the hands of the community while remaining anonymous.</p>
             </div>
         </section>
 
         <section class="quote-section">
-            <p class="quote-text">"Bitcoin is a technological tour de force."</p>
-            <p class="quote-author">Bill Gates</p>
+            <p class="quote-text">"The nature of Bitcoin is such that once version 0.1 was released, the core design was set in stone for the rest of its lifetime."</p>
+            <p class="quote-author">Satoshi Nakamoto</p>
         </section>
 
         <section class="cta-section">
-            <a href="/learn" class="cta-button">Start Learning</a>
+            <a href="/learn" class="cta-button">Discover More</a>
         </section>
     </main>
 
