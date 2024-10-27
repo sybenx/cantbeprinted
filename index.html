@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,6 +23,16 @@
         :root {
             --primary-color: #ff9500;
             --primary-hover: #ffd700;
+        }
+
+        :root[data-theme="light"] {
+            --background: #ffffff;
+            --text-color: #000000;
+            --footer-text: #666666;
+            --header-bg: rgba(255, 255, 255, 0.9);
+        }
+
+        :root[data-theme="dark"] {
             --background: #000000;
             --text-color: #ffffff;
             --footer-text: #888888;
@@ -42,6 +52,7 @@
             display: flex;
             flex-direction: column;
             color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
         
         .header {
@@ -53,7 +64,8 @@
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             z-index: 100;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(128, 128, 128, 0.1);
+            transition: background-color 0.3s ease;
         }
 
         .nav-container {
@@ -75,6 +87,7 @@
         .nav-links {
             display: flex;
             gap: 2rem;
+            align-items: center;
         }
 
         .nav-links a {
@@ -84,6 +97,27 @@
             font-weight: 500;
             transition: color 0.3s ease;
             position: relative;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .theme-toggle svg {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .theme-toggle:hover svg {
+            transform: rotate(45deg);
         }
 
         .nav-links a::after {
@@ -140,6 +174,7 @@
             font-weight: 800;
             letter-spacing: -1px;
             margin-bottom: 1rem;
+            color: var(--text-color);
         }
 
         .subheadline {
@@ -176,12 +211,22 @@
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(128, 128, 128, 0.1);
+            transition: background-color 0.3s ease;
         }
 
         .footer-text {
             color: var(--footer-text);
             font-size: 0.9rem;
+        }
+
+        .footer-text a {
+            color: var(--footer-text);
+            text-decoration: none;
+        }
+
+        .footer-text a:hover {
+            color: var(--primary-color);
         }
 
         @keyframes fadeIn {
@@ -239,22 +284,57 @@
                 <a href="/learn">Learn</a>
                 <a href="/believe">Believe</a>
                 <a href="/technical">Technical</a>
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="theme-icon">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                </button>
             </nav>
         </div>
     </header>
 
     <main class="main-content">
-
-
         <div class="text-container">
             <h1 class="headline">BlackRock is buying Bitcoin.</h1>
-            <p class="subheadline">"Over the long term, bitcoin’s adoption trajectory is likely to be driven by the intensity of concerns over global monetary stability, geopolitical stability, U.S. fiscal sustainability, and U.S. political stability."</p>
+            <p class="subheadline">"Over the long term, bitcoin's adoption trajectory is likely to be driven by the intensity of concerns over global monetary stability, geopolitical stability, U.S. fiscal sustainability, and U.S. political stability."</p>
             <a href="/learn" class="cta-button">Learn for yourself</a>
         </div>
     </main>
 
     <footer class="footer">
-        <span class="footer-text">© 2024 Can't ₿e Printed. Download the Revolution. Created by <a href="https://njump.me/npub175rnagjgxtvwvfrdytkqkkn4h062zf2cuwkx0jc8xc9nga895s8qgsef5g" class="footer-text">Aaron Herbst</a></span>
+        <span class="footer-text">© 2024 Can't ₿e Printed. Download the Revolution. Created by <a href="https://njump.me/npub175rnagjgxtvwvfrdytkqkkn4h062zf2cuwkx0jc8xc9nga895s8qgsef5g">Aaron Herbst</a></span>
     </footer>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.querySelector('.theme-toggle');
+        const root = document.documentElement;
+        const themeIcon = document.querySelector('.theme-icon');
+
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        root.setAttribute('data-theme', savedTheme);
+
+        // Update icon based on current theme
+        const updateIcon = (theme) => {
+            if (theme === 'dark') {
+                themeIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />`;
+            } else {
+                themeIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />`;
+            }
+        };
+
+        updateIcon(savedTheme);
+
+        // Toggle theme
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = root.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            root.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateIcon(newTheme);
+        });
+    </script>
 </body>
 </html>
