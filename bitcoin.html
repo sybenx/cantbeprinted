@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Understanding the importance of stable money for humanity">
+    <meta name="description" content="The profound impact of monetary systems on human civilization throughout history">
     <title aria-label="Can't Be Printed">Can't ₿e Printed</title>
     
     <!-- Favicon links -->
@@ -19,155 +19,68 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     
+    <!-- Shared Styles -->
+    <link rel="stylesheet" href="/css/styles.css">
+    
+    <!-- Page-specific styles -->
     <style>
-        :root {
-            --primary-color: #ff9500;
-            --primary-hover: #ffd700;
+        .video-container {
+            max-width: 800px;
+            width: 90%;
+            margin: 2rem auto;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(255, 149, 0, 0.15);
+            aspect-ratio: 16/9;
         }
 
-        :root[data-theme="light"] {
-            --background: #ffffff;
-            --text-color: #000000;
-            --footer-text: #666666;
-            --header-bg: rgba(255, 255, 255, 0.9);
-        }
-
-        :root[data-theme="dark"] {
-            --background: #000000;
-            --text-color: #ffffff;
-            --footer-text: #888888;
-            --header-bg: rgba(0, 0, 0, 0.9);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: var(--background);
-            font-family: 'Inter', sans-serif;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            color: var(--text-color);
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-        
-        .header {
-            position: fixed;
-            top: 0;
+        .video-container iframe {
             width: 100%;
-            padding: 1.25rem;
-            background: var(--header-bg);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            z-index: 100;
-            border-bottom: 1px solid rgba(128, 128, 128, 0.1);
-            transition: background-color 0.3s ease;
+            height: 100%;
+            border: none;
         }
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .timeline {
+            max-width: 1000px;
+            width: 90%;
+            margin: 4rem auto;
+            padding: 2rem;
+            background: rgba(255, 149, 0, 0.05);
+            border-radius: 1rem;
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            text-decoration: none;
-            letter-spacing: -0.5px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: 500;
-            transition: color 0.3s ease;
+        .era {
+            margin-bottom: 3rem;
+            padding-left: 2rem;
+            border-left: 4px solid var(--primary-color);
             position: relative;
         }
 
-        .theme-toggle {
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0.5rem;
-            color: var(--text-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .theme-toggle svg {
-            width: 20px;
-            height: 20px;
-            transition: transform 0.3s ease;
-        }
-
-        .theme-toggle:hover svg {
-            transform: rotate(45deg);
-        }
-
-        .nav-links a::after {
+        .era::before {
             content: '';
             position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -4px;
-            left: 0;
-            background-color: var(--primary-color);
-            transition: width 0.3s ease;
+            left: -12px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-color);
+            border-radius: 50%;
         }
 
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .main-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            padding: 6rem 1rem;
-            margin-top: 2rem;
-        }
-
-        .text-container {
-            text-align: center;
-            animation: fadeIn 1.5s ease-out;
-            margin-top: 2rem;
-        }
-
-        .headline {
-            font-size: 3.5rem;
-            font-weight: 800;
-            letter-spacing: -1px;
+        .era-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary-color);
             margin-bottom: 1rem;
+        }
+
+        .era-content {
             color: var(--text-color);
+            line-height: 1.7;
+            font-size: 1.1rem;
         }
 
-        .subheadline {
-            font-size: 1.25rem;
-            color: var(--footer-text);
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        .content-grid {
+        .impact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
@@ -176,142 +89,30 @@
             margin: 4rem auto;
         }
 
-        .benefit-card {
+        .impact-card {
             background: rgba(255, 149, 0, 0.05);
             border-radius: 1rem;
             padding: 2rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: 1px solid rgba(255, 149, 0, 0.1);
         }
 
-        .benefit-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(255, 149, 0, 0.1);
-        }
-
-        .benefit-title {
+        .impact-title {
             font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
             color: var(--primary-color);
         }
 
-        .benefit-text {
+        .impact-text {
             color: var(--text-color);
             line-height: 1.6;
-            font-size: 1.1rem;
         }
 
-        .quote-section {
-            text-align: center;
-            max-width: 800px;
-            margin: 4rem auto;
-            padding: 2rem;
-            border-left: 4px solid var(--primary-color);
-            background: rgba(255, 149, 0, 0.05);
-            border-radius: 0 1rem 1rem 0;
-        }
-
-        .quote-text {
-            font-size: 1.5rem;
-            font-style: italic;
-            margin-bottom: 1rem;
-            line-height: 1.6;
-            color: var(--text-color);
-        }
-
-        .quote-author {
-            color: var(--primary-color);
-            font-weight: 600;
-        }
-
-        .cta-button {
-            display: inline-block;
-            margin-top: 2rem;
-            padding: 1rem 2rem;
-            background-color: var(--primary-color);
-            color: var(--background);
-            text-decoration: none;
-            border-radius: 2rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .cta-button:hover {
-            background-color: var(--primary-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(255, 149, 0, 0.2);
-        }
-
-        .footer {
-            padding: 1.5rem;
-            background: var(--header-bg);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            text-align: center;
-            border-top: 1px solid rgba(128, 128, 128, 0.1);
-            transition: background-color 0.3s ease;
-        }
-
-        .footer-text {
-            color: var(--footer-text);
+        .source {
             font-size: 0.9rem;
-        }
-
-        .footer-text a {
             color: var(--footer-text);
-            text-decoration: none;
-        }
-
-        .footer-text a:hover {
-            color: var(--primary-color);
-        }
-
-        @keyframes fadeIn {
-            from { 
-                opacity: 0; 
-                transform: translateY(20px); 
-            }
-            to { 
-                opacity: 1; 
-                transform: translateY(0); 
-            }
-        }
-
-        @media (max-width: 768px) {
-            .headline {
-                font-size: 2.5rem;
-            }
-            
-            .nav-links {
-                gap: 1rem;
-            }
-            
-            .nav-links a {
-                font-size: 0.9rem;
-            }
-
-            .main-content {
-                padding: 4rem 1rem;
-            }
-            
-            .subheadline {
-                font-size: 1rem;
-                padding: 0 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            .headline {
-                font-size: 2rem;
-            }
+            margin-top: 1rem;
+            font-style: italic;
         }
     </style>
 </head>
@@ -335,36 +136,76 @@
 
     <main class="main-content">
         <div class="text-container">
-            <h1 class="headline">Stable Money: Humanity's Greatest Gift</h1>
-            <p class="subheadline">Throughout history, stable money has been the foundation of human prosperity, innovation, and peaceful cooperation. Discover why preserving your wealth matters more than ever.</p>
-            <a href="/learn" class="cta-button">Understand More</a>
+            <h1 class="headline">Money Shapes Civilizations</h1>
+            <p class="subheadline">Throughout history, the quality of money has determined the fate of empires, the progress of societies, and the well-being of individuals.</p>
         </div>
 
-        <div class="content-grid">
-            <div class="benefit-card">
-                <h2 class="benefit-title">Preserves Human Time</h2>
-                <p class="benefit-text">Stable money honors human effort by maintaining its value over time. It ensures that your work today will hold its worth tomorrow, allowing you to plan, save, and build for the future with confidence.</p>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/iIWViimqRMU" title="The Impact of Money on Society" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <div class="timeline">
+            <div class="era">
+                <h2 class="era-title">The Age of Hard Money (Ancient Times - 1914)</h2>
+                <p class="era-content">
+                    For most of human history, gold and silver served as money. This era saw the rise of great civilizations, technological advancement, and lasting architectural achievements. The Roman Empire maintained the purity of its gold coins for over three centuries during its golden age.
+                    <span class="source">Source: "The History of Money" by Jack Weatherford</span>
+                </p>
             </div>
 
-            <div class="benefit-card">
-                <h2 class="benefit-title">Enables Long-term Thinking</h2>
-                <p class="benefit-text">When money maintains its value, people can make better decisions. It encourages investment in lasting innovations rather than short-term speculation, benefiting society as a whole.</p>
+            <div class="era">
+                <h2 class="era-title">The Great Debasement (3rd Century AD)</h2>
+                <p class="era-content">
+                    When Rome debased its currency, reducing silver content from 100% to less than 1%, it led to the empire's economic collapse. Price controls, hyperinflation, and social unrest followed, contributing to Rome's fall.
+                    <span class="source">Source: "Currency Debasement and Social Collapse" by Joseph Peden</span>
+                </p>
             </div>
 
-            <div class="benefit-card">
-                <h2 class="benefit-title">Promotes Peace</h2>
-                <p class="benefit-text">Stable money reduces economic tensions between nations and individuals. It creates a foundation for peaceful trade and cooperation, replacing conflict with mutual benefit.</p>
+            <div class="era">
+                <h2 class="era-title">The Byzantine Stability (5th-12th Century)</h2>
+                <p class="era-content">
+                    The Byzantine Empire's gold solidus maintained its weight and purity for 800 years, enabling the longest-lasting advanced civilization in history. This monetary stability facilitated extensive trade networks and cultural preservation.
+                    <span class="source">Source: "Byzantium: The Surprising Life of a Medieval Empire" by Judith Herrin</span>
+                </p>
             </div>
 
-            <div class="benefit-card">
-                <h2 class="benefit-title">Protects the Vulnerable</h2>
-                <p class="benefit-text">Those with limited access to sophisticated financial instruments suffer most from unstable money. A stable monetary system protects savings and provides equal opportunity for all.</p>
+            <div class="era">
+                <h2 class="era-title">Modern Fiat Era (1971-Present)</h2>
+                <p class="era-content">
+                    Since abandoning the gold standard, we've seen unprecedented expansion of credit, growing wealth inequality, and the financialization of the economy. Asset prices have risen faster than wages, making home ownership increasingly difficult for younger generations.
+                    <span class="source">Source: "The Price of Tomorrow" by Jeff Booth</span>
+                </p>
             </div>
         </div>
 
-        <div class="quote-section">
-            <p class="quote-text">"Sound money is the first defense of civil liberties and the protector of human dignity. Without it, individuals become mere subjects to those who control the monetary system."</p>
-            <span class="quote-author">- Saifedean Ammous</span>
+        <div class="impact-grid">
+            <div class="impact-card">
+                <h3 class="impact-title">Cultural Impact</h3>
+                <p class="impact-text">
+                    Hard money encourages long-term thinking and investment in durable achievements. The greatest architectural works, from pyramids to cathedrals, were built under sound money systems that enabled multi-generational planning.
+                </p>
+            </div>
+
+            <div class="impact-card">
+                <h3 class="impact-title">Scientific Progress</h3>
+                <p class="impact-text">
+                    The Scientific Revolution and Industrial Revolution coincided with the gold standard era, when stable money allowed for long-term capital investment in research and development.
+                </p>
+            </div>
+
+            <div class="impact-card">
+                <h3 class="impact-title">Social Cohesion</h3>
+                <p class="impact-text">
+                    Periods of monetary stability show lower wealth inequality and stronger social bonds, while debasement periods correlate with social unrest and the breakdown of institutions.
+                </p>
+            </div>
+
+            <div class="impact-card">
+                <h3 class="impact-title">Economic Freedom</h3>
+                <p class="impact-text">
+                    Sound money limits government power and protects individual savings, enabling greater economic freedom and entrepreneurship. Debasement historically leads to greater state control and reduced individual liberty.
+                </p>
+            </div>
         </div>
     </main>
 
@@ -372,36 +213,7 @@
         <span class="footer-text">© 2024 Can't ₿e Printed. Download the Revolution. Created by <a href="https://njump.me/npub175rnagjgxtvwvfrdytkqkkn4h062zf2cuwkx0jc8xc9nga895s8qgsef5g">Aaron Herbst</a></span>
     </footer>
 
-    <script>
-        // Theme toggle functionality
-        const themeToggle = document.querySelector('.theme-toggle');
-        const root = document.documentElement;
-        const themeIcon = document.querySelector('.theme-icon');
-
-        // Check for saved theme preference
-        const savedTheme = localStorage.getItem('theme') || 'dark';
-        root.setAttribute('data-theme', savedTheme);
-
-        // Update icon based on current theme
-        const updateIcon = (theme) => {
-            if (theme === 'dark') {
-                themeIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />`;
-            } else {
-                themeIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />`;
-            }
-        };
-
-        updateIcon(savedTheme);
-
-        // Toggle theme
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = root.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            
-            root.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateIcon(newTheme);
-        });
-    </script>
+    <!-- Shared Scripts -->
+    <script src="/js/scripts.js"></script>
 </body>
 </html>
