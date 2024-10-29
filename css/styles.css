@@ -146,6 +146,25 @@ body {
     margin: 0 auto;
     line-height: 1.6;
 }
+.cta-button {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    background-color: var(--primary-color);
+    color: var(--background);
+    text-decoration: none;
+    border-radius: 2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-button:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 149, 0, 0.2);
+}
 
 /* Footer Styles */
 .footer {
@@ -218,23 +237,3 @@ body {
         font-size: 2rem;
     }
 }
-
-        .cta-button {
-            display: inline-block;
-            margin-top: 2rem;
-            padding: 1rem 2rem;
-            background-color: var(--primary-color);
-            color: var(--background);
-            text-decoration: none;
-            border-radius: 2rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .cta-button:hover {
-            background-color: var(--primary-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(255, 149, 0, 0.2);
-        }
