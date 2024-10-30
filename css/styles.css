@@ -8,6 +8,7 @@
     --text-color: #000000;
     --footer-text: #666666;
     --header-bg: rgba(255, 255, 255, 0.9);
+    --card-bg: rgba(0, 0, 0, 0.05);
 }
 
 :root[data-theme="dark"] {
@@ -15,6 +16,7 @@
     --text-color: #ffffff;
     --footer-text: #888888;
     --header-bg: rgba(0, 0, 0, 0.9);
+    --card-bg: rgba(255, 255, 255, 0.05);
 }
 
 * {
@@ -78,6 +80,22 @@ body {
     position: relative;
 }
 
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Theme Toggle */
 .theme-toggle {
     background: none;
     border: none;
@@ -99,29 +117,10 @@ body {
     transform: rotate(45deg);
 }
 
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -4px;
-    left: 0;
-    background-color: var(--primary-color);
-    transition: width 0.3s ease;
-}
-
-.nav-links a:hover::after {
-    width: 100%;
-}
-
-/* Main Content Styles */
+/* Main Content */
 .main-content {
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 6rem 1rem;
+    padding: 6rem 2rem 4rem;
     margin-top: 2rem;
 }
 
@@ -146,6 +145,27 @@ body {
     margin: 0 auto;
     line-height: 1.6;
 }
+
+/* Video Container */
+.video-container {
+    max-width: 900px;
+    width: 90%;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(255, 149, 0, 0.15);
+    position: relative;
+    background: #111;
+    margin-bottom: 3rem;
+}
+
+.responsive-iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border: none;
+    display: block;
+}
+
+/* CTA Button */
 .cta-button {
     display: inline-block;
     margin-top: 2rem;
@@ -166,7 +186,7 @@ body {
     box-shadow: 0 10px 20px rgba(255, 149, 0, 0.2);
 }
 
-/* Footer Styles */
+/* Footer */
 .footer {
     padding: 1.5rem;
     background: var(--header-bg);
@@ -203,7 +223,7 @@ body {
     }
 }
 
-/* Responsive Styles */
+/* Media Queries */
 @media (max-width: 768px) {
     .headline {
         font-size: 2.5rem;
