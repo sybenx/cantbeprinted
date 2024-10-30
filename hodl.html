@@ -178,32 +178,75 @@
         }
 
         .download-button {
-            display: inline-block;
-            padding: 1rem 2rem;
-            border-radius: 0.5rem;
-            text-decoration: none;
-            font-weight: 600;
-            color: white;
-            font-size: 1.1rem;
-            margin-top: 1rem;
-            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            transform: translateY(0);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .cashapp-button {
-            background: #00D632;
+            box-shadow: 0 4px 14px rgba(0, 214, 50, 0.15);
         }
 
         .cashapp-button:hover {
-            background: #00bf2d;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 214, 50, 0.25);
+            background: linear-gradient(45deg, #00D632, #00bf2d);
+        }
+
+        .cashapp-button::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                transparent,
+                rgba(255, 255, 255, 0.1),
+                transparent
+            );
+            transform: rotate(45deg);
+            transition: 0.5s;
+            opacity: 0;
+        }
+
+        .cashapp-button:hover::after {
+            opacity: 1;
+            left: 100%;
         }
 
         .strike-button {
-            background: #000000;
-            border: 1px solid #7d7d7d;
+            box-shadow: 0 4px 14px rgba(125, 125, 125, 0.15);
         }
 
         .strike-button:hover {
-            background: #1a1a1a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(125, 125, 125, 0.25);
+            background: linear-gradient(45deg, #000000, #1a1a1a);
+            border-color: #999;
+        }
+
+        .strike-button::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                transparent,
+                rgba(255, 255, 255, 0.05),
+                transparent
+            );
+            transform: rotate(45deg);
+            transition: 0.5s;
+            opacity: 0;
+        }
+
+        .strike-button:hover::after {
+            opacity: 1;
+            left: 100%;
         }
 
         .note-section {
