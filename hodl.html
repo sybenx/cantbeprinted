@@ -1,50 +1,65 @@
 <!DOCTYPE html>
-<html lang="en" class="dark" data-theme="dark">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Discover the revolution of better money with Bitcoin">
-    <title aria-label="Can't Be Printed">Can't ₿e Printed</title>
+    <meta name="description" content="Learn how to buy and hold Bitcoin - perfect for beginners">
+    <title aria-label="Start Your Bitcoin Journey">Start Your ₿itcoin Journey</title>
     
-    <!-- Favicon links -->
-    <link rel="icon" type="image/png" href="/favicon/favicon-48x48.png" sizes="48x48" />
-    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="Bitcoin Rocks" />
-    <link rel="manifest" href="/favicon/site.webmanifest" />
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="/css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* Reusing existing styles */
+        .main-content {
+            padding: 8rem 2rem 4rem;
+            animation: fadeIn 1.5s ease-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-section {
+            max-width: 900px;
+            margin: 0 auto 4rem;
+            text-align: center;
+            width: 100%;
+        }
+
+        .intro-section {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: 1rem;
+            line-height: 1.6;
+            width: 100%;
+        }
+
         .buying-options {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
             max-width: 1200px;
             margin: 4rem auto;
+            width: 100%;
         }
 
         .app-card {
-            background: var(--card-bg);
-            border-radius: 1rem;
             padding: 2rem;
             text-align: center;
             transition: all 0.3s ease;
-            border: 1px solid rgba(255, 149, 0, 0.1);
+            border-radius: 1rem;
         }
 
-        .app-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary-color);
-            box-shadow: 0 10px 20px rgba(255, 149, 0, 0.1);
+        .cashapp-card {
+            background: rgba(0, 214, 50, 0.1);
+            border: 1px solid #00D632;
+        }
+
+        .strike-card {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid #333;
         }
 
         .app-logo {
@@ -67,37 +82,77 @@
         }
 
         .app-title {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 700;
             margin-bottom: 1rem;
-            color: var(--primary-color);
+        }
+
+        .cashapp-title {
+            color: #00D632;
+        }
+
+        .strike-title {
+            color: #ffffff;
         }
 
         .app-description {
-            margin-bottom: 1.5rem;
+            margin: 1.5rem 0;
             line-height: 1.6;
+            font-size: 1.1rem;
             color: var(--footer-text);
+        }
+
+        .features-list {
+            text-align: left;
+            margin: 1.5rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .features-list li {
+            margin-bottom: 1rem;
+            line-height: 1.5;
         }
 
         .step-list {
             text-align: left;
             margin: 1.5rem 0;
             padding-left: 1.5rem;
+            counter-reset: steps;
         }
 
         .step-list li {
-            margin-bottom: 0.75rem;
+            margin-bottom: 1rem;
             line-height: 1.5;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .step-list li::before {
+            counter-increment: steps;
+            content: counter(steps);
+            position: absolute;
+            left: -1rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
         }
 
         .download-button {
             display: inline-block;
-            padding: 0.75rem 1.5rem;
+            padding: 1rem 2rem;
             border-radius: 0.5rem;
             text-decoration: none;
             font-weight: 600;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
             color: white;
+            font-size: 1.1rem;
+            margin-top: 1rem;
         }
 
         .cashapp-button {
@@ -106,6 +161,7 @@
 
         .cashapp-button:hover {
             background: #00bf2d;
+            transform: translateY(-2px);
         }
 
         .strike-button {
@@ -115,66 +171,34 @@
 
         .strike-button:hover {
             background: #1a1a1a;
+            transform: translateY(-2px);
         }
 
-        .hodl-explanation {
+        .note-section {
             max-width: 800px;
             margin: 4rem auto;
             padding: 2rem;
             background: var(--card-bg);
             border-radius: 1rem;
-            line-height: 1.6;
-        }
-        .main-content {
-            padding: 8rem 2rem 4rem;
-            animation: fadeIn 1.5s ease-out;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            border-left: 4px solid var(--primary-color);
             width: 100%;
         }
 
-        .hero-section {
-            max-width: 900px;
-            margin: 0 auto 4rem;
-            text-align: center;
-            width: 100%;
+        .note-title {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
         }
 
-        .buying-options {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 4rem auto;
-            width: 100%;
-        }
-
-        .hodl-explanation {
-            max-width: 800px;
-            margin: 4rem auto;
-            padding: 2rem;
-            background: var(--card-bg);
-            border-radius: 1rem;
-            line-height: 1.6;
-            width: 100%;
-        }
-
-        .quote-section {
-            max-width: 800px;
-            margin: 6rem auto;
-            text-align: center;
-            padding: 2rem;
-            background: var(--card-bg);
-            border-radius: 1rem;
-            width: 100%;
-        }
-
-        .footer {
-            text-align: center;
-            padding: 2rem;
-            margin-top: auto;
-            width: 100%;
+        @media (max-width: 768px) {
+            .buying-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .app-card {
+                margin: 1rem;
+            }
         }
     </style>
 </head>
@@ -198,50 +222,70 @@
 
     <main class="main-content">
         <section class="hero-section">
-            <h1 class="hero-title">HODL Bitcoin</h1>
+            <h1 class="hero-title">Start Your Bitcoin Journey</h1>
             <p class="hero-subtitle">
-                Start your Bitcoin journey by stacking sats with trusted platforms. Remember: Not your keys, not your coins.
+                Ready to buy your first Bitcoin? We'll show you the easiest ways to get started.
             </p>
         </section>
 
-        <section class="hodl-explanation">
+        <section class="intro-section">
             <h2 style="color: var(--primary-color); margin-bottom: 1rem;">What is HODLing?</h2>
-            <p>HODL (Hold On for Dear Life) is a long-term Bitcoin investment strategy. Rather than trying to time the market, HODLers accumulate Bitcoin regularly and hold it for the long term, believing in Bitcoin's potential as sound money.</p>
+            <p>HODL stands for "Hold On for Dear Life" - it means buying Bitcoin and keeping it safe for the long term. Think of it like a savings account, but for the digital age. Instead of trying to trade or time the market, HODLers simply save regularly and wait patiently.</p>
         </section>
 
         <section class="buying-options">
-            <div class="app-card">
+            <div class="app-card cashapp-card">
                 <div class="app-logo cashapp-logo">₿</div>
-                <h3 class="app-title">Cash App</h3>
-                <p class="app-description">Quick and easy Bitcoin purchases with instant deposits from your bank account.</p>
+                <h3 class="app-title cashapp-title">Cash App</h3>
+                <p class="app-description">Perfect for beginners! Cash App makes buying Bitcoin as easy as sending money to friends.</p>
+                
+                <h4 style="color: #00D632; margin: 2rem 0 1rem;">Why Choose Cash App?</h4>
+                <ul class="features-list">
+                    <li>Already have Cash App? You're halfway there!</li>
+                    <li>Buy Bitcoin with as little as $1</li>
+                    <li>Instant deposits from your bank</li>
+                    <li>Easy to understand interface</li>
+                </ul>
+
+                <h4 style="color: #00D632; margin: 2rem 0 1rem;">Getting Started</h4>
                 <ol class="step-list">
-                    <li>Download Cash App</li>
-                    <li>Link your bank account</li>
-                    <li>Tap the Bitcoin tab</li>
-                    <li>Enter amount and buy</li>
-                    <li>Transfer to your own wallet</li>
+                    <li>Download Cash App from your app store</li>
+                    <li>Link your bank account or debit card</li>
+                    <li>Tap the Bitcoin tab (look for the ₿ symbol)</li>
+                    <li>Choose how much you want to buy</li>
+                    <li>That's it! You now own Bitcoin</li>
                 </ol>
-                <a href="https://cash.app" class="download-button cashapp-button">Get Cash App</a>
+                <a href="https://cash.app" class="download-button cashapp-button">Download Cash App</a>
             </div>
 
-            <div class="app-card">
+            <div class="app-card strike-card">
                 <div class="app-logo strike-logo">⚡</div>
-                <h3 class="app-title">Strike</h3>
-                <p class="app-description">Buy Bitcoin with some of the lowest fees using the Lightning Network.</p>
+                <h3 class="app-title strike-title">Strike</h3>
+                <p class="app-description">The cheapest way to buy Bitcoin, powered by the Lightning Network.</p>
+                
+                <h4 style="color: white; margin: 2rem 0 1rem;">Why Choose Strike?</h4>
+                <ul class="features-list">
+                    <li>Lowest fees in the industry</li>
+                    <li>Lightning-fast Bitcoin transfers</li>
+                    <li>Clean, simple interface</li>
+                    <li>Instant bank transfers</li>
+                </ul>
+
+                <h4 style="color: white; margin: 2rem 0 1rem;">Getting Started</h4>
                 <ol class="step-list">
-                    <li>Download Strike</li>
-                    <li>Verify your identity</li>
-                    <li>Connect your bank</li>
+                    <li>Download Strike from your app store</li>
+                    <li>Create an account and verify your identity</li>
+                    <li>Connect your bank account</li>
                     <li>Tap "Buy Bitcoin"</li>
-                    <li>Withdraw to your wallet</li>
+                    <li>Choose your amount and confirm</li>
                 </ol>
-                <a href="https://strike.me" class="download-button strike-button">Get Strike</a>
+                <a href="https://strike.me" class="download-button strike-button">Download Strike</a>
             </div>
         </section>
 
-        <section class="quote-section">
-            <p class="quote-text">"I am HODLing for my dear life"</p>
-            <span class="quote-author">GameKyuubi, 2013 - Origin of HODL</span>
+        <section class="note-section">
+            <h3 class="note-title">🔑 Important Security Tip</h3>
+            <p>After buying Bitcoin, consider moving it to your own wallet where you control the private keys. Remember the golden rule: "Not your keys, not your coins." This means that while Cash App and Strike are great for buying Bitcoin, the safest place to store it long-term is in your own wallet.</p>
         </section>
     </main>
 
