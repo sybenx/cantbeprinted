@@ -129,8 +129,24 @@
         }
 
         .cta-button {
+            display: block;
             width: fit-content;
             margin: 2rem auto 0;
+            padding: 1rem 2rem;
+            background-color: var(--primary-color);
+            color: var(--background);
+            text-decoration: none;
+            border-radius: 2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 149, 0, 0.2);
         }
 
         .footer-text {
