@@ -39,12 +39,19 @@
             width: 80px;
             height: 80px;
             margin: 0 auto 1.5rem;
-            background: var(--primary-color);
             border-radius: 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 2rem;
+        }
+
+        .cashapp-logo {
+            background: #00D632;
+        }
+
+        .strike-logo {
+            background: #000000;
         }
 
         .app-title {
@@ -73,17 +80,29 @@
 
         .download-button {
             display: inline-block;
-            background: var(--primary-color);
-            color: var(--background);
             padding: 0.75rem 1.5rem;
             border-radius: 0.5rem;
             text-decoration: none;
             font-weight: 600;
             transition: background 0.3s ease;
+            color: white;
         }
 
-        .download-button:hover {
-            background: var(--primary-hover);
+        .cashapp-button {
+            background: #00D632;
+        }
+
+        .cashapp-button:hover {
+            background: #00bf2d;
+        }
+
+        .strike-button {
+            background: #000000;
+            border: 1px solid #333;
+        }
+
+        .strike-button:hover {
+            background: #1a1a1a;
         }
 
         .hodl-explanation {
@@ -129,7 +148,7 @@
 
         <section class="buying-options">
             <div class="app-card">
-                <div class="app-logo">₿</div>
+                <div class="app-logo cashapp-logo">₿</div>
                 <h3 class="app-title">Cash App</h3>
                 <p class="app-description">Quick and easy Bitcoin purchases with instant deposits from your bank account.</p>
                 <ol class="step-list">
@@ -139,11 +158,11 @@
                     <li>Enter amount and buy</li>
                     <li>Transfer to your own wallet</li>
                 </ol>
-                <a href="https://cash.app" class="download-button">Get Cash App</a>
+                <a href="https://cash.app" class="download-button cashapp-button">Get Cash App</a>
             </div>
 
             <div class="app-card">
-                <div class="app-logo">⚡</div>
+                <div class="app-logo strike-logo">⚡</div>
                 <h3 class="app-title">Strike</h3>
                 <p class="app-description">Buy Bitcoin with some of the lowest fees using the Lightning Network.</p>
                 <ol class="step-list">
@@ -153,7 +172,7 @@
                     <li>Tap "Buy Bitcoin"</li>
                     <li>Withdraw to your wallet</li>
                 </ol>
-                <a href="https://strike.me" class="download-button">Get Strike</a>
+                <a href="https://strike.me" class="download-button strike-button">Get Strike</a>
             </div>
         </section>
 
