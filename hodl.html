@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn how to HODL Bitcoin and start stacking sats">
+    <title aria-label="HODL Bitcoin">HODL ₿itcoin</title>
+    
+    <!-- Reusing existing head elements -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Reusing existing styles */
+        .buying-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 4rem auto;
+        }
+
+        .app-card {
+            background: var(--card-bg);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 149, 0, 0.1);
+        }
+
+        .app-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 20px rgba(255, 149, 0, 0.1);
+        }
+
+        .app-logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: var(--primary-color);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .app-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .app-description {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            color: var(--footer-text);
+        }
+
+        .step-list {
+            text-align: left;
+            margin: 1.5rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .step-list li {
+            margin-bottom: 0.75rem;
+            line-height: 1.5;
+        }
+
+        .download-button {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--background);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .download-button:hover {
+            background: var(--primary-hover);
+        }
+
+        .hodl-explanation {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: 1rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <a href="/" class="logo" aria-label="Can't Be Printed">Can't ₿e Printed</a>
+            <nav class="nav-links">
+                <a href="/">Home</a>
+                <a href="/learn">Learn</a>
+                <a href="/believe">Believe</a>
+                <a href="/technical">Technical</a>
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="theme-icon">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="hero-section">
+            <h1 class="hero-title">HODL Bitcoin</h1>
+            <p class="hero-subtitle">
+                Start your Bitcoin journey by stacking sats with trusted platforms. Remember: Not your keys, not your coins.
+            </p>
+        </section>
+
+        <section class="hodl-explanation">
+            <h2 style="color: var(--primary-color); margin-bottom: 1rem;">What is HODLing?</h2>
+            <p>HODL (Hold On for Dear Life) is a long-term Bitcoin investment strategy. Rather than trying to time the market, HODLers accumulate Bitcoin regularly and hold it for the long term, believing in Bitcoin's potential as sound money.</p>
+        </section>
+
+        <section class="buying-options">
+            <div class="app-card">
+                <div class="app-logo">₿</div>
+                <h3 class="app-title">Cash App</h3>
+                <p class="app-description">Quick and easy Bitcoin purchases with instant deposits from your bank account.</p>
+                <ol class="step-list">
+                    <li>Download Cash App</li>
+                    <li>Link your bank account</li>
+                    <li>Tap the Bitcoin tab</li>
+                    <li>Enter amount and buy</li>
+                    <li>Transfer to your own wallet</li>
+                </ol>
+                <a href="https://cash.app" class="download-button">Get Cash App</a>
+            </div>
+
+            <div class="app-card">
+                <div class="app-logo">⚡</div>
+                <h3 class="app-title">Strike</h3>
+                <p class="app-description">Buy Bitcoin with some of the lowest fees using the Lightning Network.</p>
+                <ol class="step-list">
+                    <li>Download Strike</li>
+                    <li>Verify your identity</li>
+                    <li>Connect your bank</li>
+                    <li>Tap "Buy Bitcoin"</li>
+                    <li>Withdraw to your wallet</li>
+                </ol>
+                <a href="https://strike.me" class="download-button">Get Strike</a>
+            </div>
+        </section>
+
+        <section class="quote-section">
+            <p class="quote-text">"I am HODLing for my dear life"</p>
+            <span class="quote-author">GameKyuubi, 2013 - Origin of HODL</span>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <span class="footer-text">© 2024 Can't ₿e Printed. Download the Revolution. Created by <a href="https://njump.me/npub175rnagjgxtvwvfrdytkqkkn4h062zf2cuwkx0jc8xc9nga895s8qgsef5g" class="footer-text">Aaron Herbst</a></span>
+    </footer>
+    <script src="/js/scripts.js"></script>
+</body>
+</html>
