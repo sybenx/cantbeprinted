@@ -213,7 +213,12 @@
         .qr {
             width: 75%;
             border-radius: 25px;
-            margin-bottom: 2rem
+            margin-bottom: 2rem;
+            transition: transform 0.2s ease;
+        }
+
+        .qr:hover {
+            transform: scale(1.05);
         }
 
         .note-section {
@@ -362,7 +367,9 @@
                 </ol>
                 <a href="https://cash.app/app/KSJSKCW" class="download-button cashapp-button">Download Cash App</a>
                 <div class="footer-text" style="margin: 1rem 0 2rem;">use my referral code to support me and get $5: KSJSKCW</div>
-                <img src="/images/cashqr.png" href="https://cash.app/app/KSJSKCW" class="qr">
+                <a href="https://cash.app/app/KSJSKCW">
+                    <img src="/images/cashqr.png" class="qr" alt="Cash App QR Code">
+                </a>
             </div>
 
             <div class="app-card strike-card">
@@ -390,7 +397,9 @@
                 </ol>
                 <a href="https://invite.strike.me/BNUI2T" class="download-button strike-button">Download Strike</a>
                 <div class="footer-text" style="color: #cacaca; margin: 1rem 0 2rem;">use my referral code to support me and trade $500 free: BNUI2T</div>
-                <img src="/images/strikeqr.png" href="https://invite.strike.me/BNUI2T" class="qr">
+                <a href="https://invite.strike.me/BNUI2T">
+                    <img src="/images/strikeqr.png" class="qr">
+                </a>
             </div>
         </section>
 
