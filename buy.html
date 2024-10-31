@@ -230,6 +230,52 @@
             font-weight: 600;
         }
 
+        .pdf-section {
+            text-align: center;
+            margin: 4rem auto;
+            max-width: 900px;
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .pdf-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 1.25rem 2.5rem;
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            text-decoration: none;
+            border-radius: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            min-width: 250px;
+        }
+
+        .pdf-button:hover {
+            background-color: var(--primary-color);
+            color: var(--background);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 149, 0, 0.2);
+        }
+
+        .pdf-text-container {
+            width: 100%;
+            text-align: left;
+        }
+
+        .pdf-button-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .pdf-button-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
         @media (max-width: 768px) {
             .buying-options {
                 grid-template-columns: 1fr;
@@ -271,6 +317,14 @@
         <section class="intro-section">
             <h2 style="color: var(--primary-color); margin-bottom: 1rem;">What is HODLing?</h2>
             <p>HODL stands for "Hold On for Dear Life" - it means buying Bitcoin and keeping it safe for the long term. Think of it like a savings account, but for the digital age. Instead of trying to trade or time the market, HODLers simply save regularly and wait patiently.</p>
+        </section>
+        <section class="pdf-section">
+        <a href="https://saifedean.com/tbs" class="pdf-button">
+            <div class="pdf-text-container">
+                <div class="pdf-button-title">The Bitcoin Standard</div>
+                <div class="pdf-button-subtitle">read the book</div>
+            </div>
+        </a>
         </section>
 
         <section class="buying-options">
