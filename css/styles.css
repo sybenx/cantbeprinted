@@ -9,7 +9,7 @@
     --footer-text: #666666;
     --header-bg: rgba(255, 255, 255, 0.9);
     --card-bg: rgba(0, 0, 0, 0.05);
-    --card-text: #4f4f4f;
+    --card-text: #cacaca;
 }
 
 :root[data-theme="dark"] {
@@ -18,7 +18,7 @@
     --footer-text: #888888;
     --header-bg: rgba(0, 0, 0, 0.9);
     --card-bg: rgba(255, 255, 255, 0.05);
-    --card-text: #cacaca;
+    --card-text: #4f4f4f;
 }
 
 * {
