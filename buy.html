@@ -19,7 +19,7 @@
     
     <style>
         .main-content {
-            padding: 8rem 2rem 4rem;
+            padding: 8rem 1rem 4rem;
             animation: fadeIn 1.5s ease-out;
             display: flex;
             flex-direction: column;
@@ -67,11 +67,12 @@
 
         .buying-options {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             max-width: 1200px;
             margin: 4rem auto;
             width: 100%;
+            padding: 0 1rem;
         }
 
         .app-card {
@@ -79,6 +80,8 @@
             text-align: center;
             transition: all 0.3s ease;
             border-radius: 1rem;
+            width: 100%;
+            margin: 0;
         }
 
         .cashapp-card {
@@ -190,24 +193,24 @@
 
         .cashapp-button {
             background: #00D632;
-            border:1px solid #00d632
+            border: 1px solid #00d632;
         }
 
         .cashapp-button:hover {
             background: var(--background);
-            color:#00D632;
+            color: #00D632;
             border: 1px solid #00D632;
         }
 
         .cashapp-button-inverted {
             background: var(--background);
-            color:#00D632;
-            border:1px solid #00D632;
+            color: #00D632;
+            border: 1px solid #00D632;
         }
 
         .cashapp-button-inverted:hover {
             background: #00D632;
-            border:1px solid white;
+            border: 1px solid white;
             color: white;
         }
 
@@ -250,24 +253,26 @@
 
         .book-section {
             text-align: center;
-            margin: 4rem auto;
+            margin: 4rem 1rem;
             max-width: 900px;
             display: flex;
             gap: 2rem;
             justify-content: center;
             flex-wrap: wrap;
+            width: calc(100% - 2rem);
         }
 
         .book-image {
-            width: 70px;
+            width: 60px;
             height: auto;
-            margin-right: 20px;
+            margin-right: 15px;
+            flex-shrink: 0;
         }
 
         .book-button {
             display: inline-flex;
             align-items: center;
-            padding: 2rem 3.5rem;
+            padding: 1.5rem;
             background-color: var(--card-bg);
             color: var(--text-color);
             text-decoration: none;
@@ -275,7 +280,8 @@
             font-weight: 600;
             transition: all 0.3s ease;
             border: 1px solid var(--card-text);
-            min-width: 300px;
+            width: 100%;
+            max-width: 400px;
         }
 
         .book-button:hover {
@@ -285,27 +291,54 @@
         }
 
         .book-text-container {
-            width: 100%;
+            flex-grow: 1;
             text-align: left;
+            min-width: 0;
         }
 
         .book-button-title {
-            font-size: 1.4rem;
-            margin-bottom: 0.4rem;
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .book-button-subtitle {
-            font-size: 1.1rem;
+            font-size: 1rem;
             opacity: 0.8;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         @media (max-width: 768px) {
             .buying-options {
                 grid-template-columns: 1fr;
+                margin: 2rem auto;
+                padding: 0 0.5rem;
             }
             
             .app-card {
-                margin: 1rem;
+                margin: 0;
+                padding: 1.5rem;
+            }
+
+            .book-button {
+                padding: 1.25rem;
+            }
+
+            .book-image {
+                width: 50px;
+                margin-right: 12px;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
             }
         }
     </style>
