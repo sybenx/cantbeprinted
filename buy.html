@@ -199,6 +199,17 @@
             border: 1px solid #00D632;
         }
 
+        .cashapp-button-inverted {
+            background: #fff;
+            color:#00D632;
+            border:1px solid #00D632;
+        }
+
+        .cashapp-button-inverted:hover {
+            background: #00D632;
+            border:1px solid rgba(0, 214, 50, 0.1);
+        }
+
         .strike-button {
             background: #000000;
             border: 1px solid #7d7d7d;
@@ -369,13 +380,13 @@
                     <li>That's it! You now own Bitcoin</li>
                 </ol>
                 <a href="https://cash.app/app/" class="download-button cashapp-button">Download Cash App</a>
-                <a href="https://cash.app/app/KSJSKCW">
+                <div>
                     <div class="qr-box" style="border: 1px solid #00d632; background: #00d632;">
-                        <div class="download-button cashapp-button">Download with Referral</div>
-                        <div class="cash" style="margin: 1rem 0 1rem; color: #4d4d4d; text-decoration: none;">use my referral code to support me and get $5: KSJSKCW</div>
+                        <a href="https://cash.app/app/KSJSKCW" class="download-button cashapp-button-inverted">Download with Referral</a>
+                        <div class="cash" style="margin: 1rem 0 1rem; color: #cacaca; text-decoration: none;">use my referral code to support me and get $5: KSJSKCW</div>
                             <img src="/images/cashappqr.svg" class="qr" alt="Cash App QR Code" style="background: var(--background); border:1px solid #00D632;">
                     </div>
-                </a>
+                </div>
             </div>
 
             <div class="app-card strike-card">
@@ -402,13 +413,13 @@
                     <li>Choose your amount and confirm</li>
                 </ol>
                 <a href="https://invite.strike.me/" class="download-button strike-button">Download Strike</a>
-                <a href="https://invite.strike.me/BNUI2T">
+                <div>
                     <div class="qr-box" style="border: 1px solid white; background: white">
-                        <div class="download-button strike-button">Download with Referral</div>
+                        <a href="https://invite.strike.me/BNUI2T" class="download-button strike-button">Download with Referral</a>
                         <div class="footer-text qr" style="color: #4d4d4d; margin: 1rem 0 1rem; text-decoration: none;">use my referral code to support me and trade $500 free: BNUI2T</div>
                             <img src="/images/strikeqrwhite.svg" class="qr" style="border: 1px solid gray; background: black;">
                     </div>
-                </a>
+                </div>
             </div>
         </section>
 
