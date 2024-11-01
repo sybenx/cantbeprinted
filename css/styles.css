@@ -10,7 +10,6 @@
     --header-bg: rgba(255, 255, 255, 0.9);
     --card-bg: rgba(0, 0, 0, 0.05);
     --card-text: #4f4f4f;
-    --cashapp: black;
 }
 
 :root[data-theme="dark"] {
@@ -20,7 +19,6 @@
     --header-bg: rgba(0, 0, 0, 0.9);
     --card-bg: rgba(255, 255, 255, 0.05);
     --card-text: #cacaca;
-    --cashapp: #00D632;
 }
 
 * {
