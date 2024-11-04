@@ -1,12 +1,16 @@
+// Immediately-invoked function to set initial theme before page loads
+(function() {
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    document.documentElement.classList.remove('dark', 'light');
+    document.documentElement.classList.add(savedTheme);
+})();
+
 // Theme toggle functionality
 document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.querySelector('.theme-toggle');
     const root = document.documentElement;
     const themeIcon = document.querySelector('.theme-icon');
-
-    // Check for saved theme preference
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    root.setAttribute('data-theme', savedTheme);
 
     // Update icon based on current theme
     const updateIcon = (theme) => {
@@ -17,7 +21,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    updateIcon(savedTheme);
+    // Check and apply current theme
+    const currentTheme = root.getAttribute('data-theme');
+    updateIcon(currentTheme);
+
+    // Handle system theme changes if no manual preference is set
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) {
+            const newTheme = e.matches ? 'dark' : 'light';
+            root.setAttribute('data-theme', newTheme);
+            root.classList.remove('dark', 'light');
+            root.classList.add(newTheme);
+            updateIcon(newTheme);
+        }
+    });
 
     // Toggle theme
     themeToggle.addEventListener('click', () => {
@@ -25,6 +42,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
         
         root.setAttribute('data-theme', newTheme);
+        root.classList.remove('dark', 'light');
+        root.classList.add(newTheme);
         localStorage.setItem('theme', newTheme);
         updateIcon(newTheme);
     });
