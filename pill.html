@@ -1,38 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       background: black;
-      height: 100vh;
+      min-height: 100vh;
+      min-height: -webkit-fill-available;
       display: flex;
       justify-content: center;
       align-items: center;
       overflow: hidden;
       font-family: 'Arial', sans-serif;
+      touch-action: manipulation;
+    }
+
+    html {
+      height: -webkit-fill-available;
     }
 
     .container {
       text-align: center;
       z-index: 2;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        flex-direction: row;
+        gap: 4rem;
+      }
     }
 
     .pill {
       position: relative;
-      width: 120px;
-      height: 60px;
-      margin: 20px;
+      width: min(280px, 80vw);
+      height: min(70px, 15vh);
       border: none;
-      border-radius: 30px;
+      border-radius: 35px;
       cursor: pointer;
-      font-size: 18px;
+      font-size: clamp(16px, 5vw, 24px);
+      font-weight: bold;
       color: white;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       animation: pulse 2s infinite;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    @media (min-width: 768px) {
+      .pill {
+        width: 180px;
+        height: 80px;
+        font-size: 20px;
+      }
     }
 
     .blue-pill {
@@ -46,12 +80,12 @@
       animation-delay: 1s;
     }
 
-    .blue-pill:hover {
+    .blue-pill:hover, .blue-pill:active {
       background: rgb(138, 43, 226);
       transform: scale(1.1);
     }
 
-    .red-pill:hover {
+    .red-pill:hover, .red-pill:active {
       background: rgb(255, 165, 0);
       transform: scale(1.1);
     }
@@ -80,16 +114,16 @@
     .electricity {
       position: absolute;
       background: linear-gradient(90deg, transparent, currentColor, transparent);
-      height: 2px;
-      width: 100px;
+      height: min(2px, 0.5vh);
+      width: min(100px, 30vw);
       transform-origin: left center;
       opacity: 0;
     }
 
     .slime {
       position: absolute;
-      width: 20px;
-      height: 20px;
+      width: min(20px, 5vw);
+      height: min(20px, 5vw);
       border-radius: 50%;
       background: currentColor;
       filter: blur(5px);
@@ -163,7 +197,9 @@
     const effectContainer = document.querySelector('.effect-container');
     const overlay = document.querySelector('.overlay');
 
-    function createParticles(event, color) {
+    // Function to handle both click and touch events
+    function handleInteraction(event, color) {
+      event.preventDefault(); // Prevent default behavior
       if (isAnimating) return;
       isAnimating = true;
 
@@ -175,7 +211,6 @@
       // Set overlay color
       overlay.style.background = `radial-gradient(circle, ${color}33 0%, black 100%)`;
       
-      // Create spreading effect
       function createWave(timestamp) {
         // Create electricity
         if (Math.random() < 0.3) {
@@ -208,7 +243,6 @@
           }
         }
 
-        // Gradually increase overlay opacity
         overlay.style.opacity = Math.min(parseFloat(overlay.style.opacity || 0) + 0.001, 0.8);
 
         if (isAnimating) {
@@ -232,17 +266,31 @@
         }, i * 50);
       }
 
-      // Start continuous wave effect
       requestAnimationFrame(createWave);
     }
 
-    document.querySelector('.blue-pill').addEventListener('click', (e) => {
-      createParticles(e, 'rgb(138, 43, 226)'); // Purple
+    // Add event listeners for both click and touch events
+    const bluePill = document.querySelector('.blue-pill');
+    const redPill = document.querySelector('.red-pill');
+
+    ['click', 'touchstart'].forEach(eventType => {
+      bluePill.addEventListener(eventType, (e) => handleInteraction(e, 'rgb(138, 43, 226)'));
+      redPill.addEventListener(eventType, (e) => handleInteraction(e, 'rgb(255, 165, 0)'));
     });
 
-    document.querySelector('.red-pill').addEventListener('click', (e) => {
-      createParticles(e, 'rgb(255, 165, 0)'); // Orange
-    });
+    // Prevent default touch behavior to avoid scrolling
+    document.body.addEventListener('touchmove', (e) => {
+      if (isAnimating) e.preventDefault();
+    }, { passive: false });
+
+    // Handle window resize
+    function updateViewportHeight() {
+      document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+    }
+
+    window.addEventListener('resize', updateViewportHeight);
+    window.addEventListener('orientationchange', updateViewportHeight);
+    updateViewportHeight();
   </script>
 </body>
 </html>
