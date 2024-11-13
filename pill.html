@@ -15,6 +15,7 @@
 
     .container {
       text-align: center;
+      z-index: 2;
     }
 
     .pill {
@@ -25,13 +26,13 @@
       border: none;
       border-radius: 30px;
       cursor: pointer;
-      transition: all 0.3s ease;
       font-size: 18px;
       color: white;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      animation: pulse 2s infinite;
     }
 
     .blue-pill {
@@ -42,6 +43,7 @@
     .red-pill {
       background: rgb(255, 0, 0);
       box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+      animation-delay: 1s;
     }
 
     .blue-pill:hover {
@@ -52,6 +54,21 @@
     .red-pill:hover {
       background: rgb(255, 165, 0);
       transform: scale(1.1);
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 20px currentColor;
+      }
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 40px currentColor;
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 20px currentColor;
+      }
     }
 
     .particle {
@@ -79,74 +96,144 @@
       opacity: 0;
     }
 
+    .effect-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 1;
+    }
+
     @keyframes shoot {
       0% {
         opacity: 0;
         transform: scale(0.1) translateX(0);
       }
       50% {
-        opacity: 1;
+        opacity: 0.8;
       }
       100% {
-        opacity: 0;
-        transform: scale(1) translateX(100vw);
+        opacity: 0.3;
+        transform: scale(1.5) translateX(100vw);
       }
     }
 
     @keyframes drip {
       0% {
         opacity: 0;
-        transform: translateY(-50px);
+        transform: translateY(-50px) scale(1);
       }
       50% {
-        opacity: 1;
+        opacity: 0.8;
+        transform: translateY(50vh) scale(1.5);
       }
       100% {
-        opacity: 0;
-        transform: translateY(100vh);
+        opacity: 0.3;
+        transform: translateY(100vh) scale(2);
       }
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: radial-gradient(circle, transparent 0%, black 100%);
+      mix-blend-mode: screen;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 3s ease;
+      z-index: 3;
     }
   </style>
 </head>
 <body>
+  <div class="effect-container"></div>
+  <div class="overlay"></div>
   <div class="container">
     <a href="https://nostr.com" class="pill blue-pill">NOSTR</a>
     <a href="https://bitcoin.org" class="pill red-pill">BITCOIN</a>
   </div>
 
   <script>
+    let isAnimating = false;
+    const effectContainer = document.querySelector('.effect-container');
+    const overlay = document.querySelector('.overlay');
+
     function createParticles(event, color) {
+      if (isAnimating) return;
+      isAnimating = true;
+
       const pill = event.target;
       const rect = pill.getBoundingClientRect();
       const startX = rect.left + rect.width / 2;
       const startY = rect.top + rect.height / 2;
 
-      // Create electricity
-      for (let i = 0; i < 10; i++) {
-        const electricity = document.createElement('div');
-        electricity.className = 'electricity';
-        electricity.style.left = startX + 'px';
-        electricity.style.top = (startY - 1 + Math.random() * 2) + 'px';
-        electricity.style.transform = `rotate(${-30 + Math.random() * 60}deg)`;
-        electricity.style.color = color;
-        electricity.style.animation = 'shoot 1s ease-out forwards';
-        document.body.appendChild(electricity);
-        
-        setTimeout(() => electricity.remove(), 1000);
+      // Set overlay color
+      overlay.style.background = `radial-gradient(circle, ${color}33 0%, black 100%)`;
+      
+      // Create spreading effect
+      function createWave(timestamp) {
+        // Create electricity
+        if (Math.random() < 0.3) {
+          for (let i = 0; i < 3; i++) {
+            const electricity = document.createElement('div');
+            electricity.className = 'electricity';
+            electricity.style.left = (Math.random() * window.innerWidth) + 'px';
+            electricity.style.top = (Math.random() * window.innerHeight) + 'px';
+            electricity.style.transform = `rotate(${Math.random() * 360}deg)`;
+            electricity.style.color = color;
+            electricity.style.animation = 'shoot 2s ease-out forwards';
+            effectContainer.appendChild(electricity);
+            
+            setTimeout(() => electricity.remove(), 2000);
+          }
+        }
+
+        // Create slime particles
+        if (Math.random() < 0.2) {
+          for (let i = 0; i < 2; i++) {
+            const slime = document.createElement('div');
+            slime.className = 'slime';
+            slime.style.left = (Math.random() * window.innerWidth) + 'px';
+            slime.style.top = '-20px';
+            slime.style.color = color;
+            slime.style.animation = `drip ${2 + Math.random() * 2}s ease-out forwards`;
+            effectContainer.appendChild(slime);
+            
+            setTimeout(() => slime.remove(), 4000);
+          }
+        }
+
+        // Gradually increase overlay opacity
+        overlay.style.opacity = Math.min(parseFloat(overlay.style.opacity || 0) + 0.001, 0.8);
+
+        if (isAnimating) {
+          requestAnimationFrame(createWave);
+        }
       }
 
-      // Create slime particles
-      for (let i = 0; i < 15; i++) {
-        const slime = document.createElement('div');
-        slime.className = 'slime';
-        slime.style.left = (startX - 10 + Math.random() * 20) + 'px';
-        slime.style.top = startY + 'px';
-        slime.style.color = color;
-        slime.style.animation = `drip ${1 + Math.random()}s ease-out forwards`;
-        document.body.appendChild(slime);
-        
-        setTimeout(() => slime.remove(), 2000);
+      // Initial burst of particles
+      for (let i = 0; i < 20; i++) {
+        setTimeout(() => {
+          const electricity = document.createElement('div');
+          electricity.className = 'electricity';
+          electricity.style.left = startX + 'px';
+          electricity.style.top = (startY - 1 + Math.random() * 2) + 'px';
+          electricity.style.transform = `rotate(${Math.random() * 360}deg)`;
+          electricity.style.color = color;
+          electricity.style.animation = 'shoot 2s ease-out forwards';
+          effectContainer.appendChild(electricity);
+          
+          setTimeout(() => electricity.remove(), 2000);
+        }, i * 50);
       }
+
+      // Start continuous wave effect
+      requestAnimationFrame(createWave);
     }
 
     document.querySelector('.blue-pill').addEventListener('click', (e) => {
