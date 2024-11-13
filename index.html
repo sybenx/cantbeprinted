@@ -32,6 +32,30 @@
             padding: 6rem 1rem;
             margin-top: 2rem;
         }
+
+        .button-container {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .cta-button {
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .community-button {
+            background-color: #8a2be2;
+            color: white;
+        }
+
+        .community-button:hover {
+            background-color: #9945e3;
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 <body>
@@ -55,9 +79,12 @@
 
     <main class="main-content">
         <div class="text-container">
-            <h1 class="headline">People want money that doesn't steal from them</h1>
-            <p class="subheadline">Bitcoin can't be printed or debased. It can be used as a store of value over time.</p>
-            <a href="/learn" class="cta-button">Learn</a>
+            <h1 class="headline">People want better money</h1>
+            <p class="subheadline">Bitcoin can't be printed or debased.</p>
+            <div class="button-container">
+                <a href="/learn" class="cta-button">Learn</a>
+                <a href="https://primal.net/home" class="cta-button community-button">Join the Community</a>
+            </div>
         </div>
     </main>
 
