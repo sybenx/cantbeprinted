@@ -1,6 +1,6 @@
 :root {
-    --primary-color: #4CAF50; /* Original green */
-    --primary-hover: #2E7D32; /* Original darker green */
+    --primary-color: #4CAF50; /* Logo green */
+    --primary-hover: #2E7D32; /* Darker green */
 }
 
 :root[data-theme="light"] {
@@ -10,17 +10,15 @@
     --header-bg: rgba(255, 255, 255, 0.9);
     --card-bg: rgba(0, 0, 0, 0.05);
     --card-text: #4f4f4f;
-    --icon-fill: #000000; /* Black icons for light theme */
 }
 
 :root[data-theme="dark"] {
-    --background: #1A1A1A; /* Original black */
+    --background: #1A1A1A;
     --text-color: #ffffff;
-    --footer-text: #CCCCCC; /* Kept for readability */
+    --footer-text: #CCCCCC; /* Updated for better contrast */
     --header-bg: rgba(0, 0, 0, 0.9);
     --card-bg: rgba(255, 255, 255, 0.15);
     --card-text: #cacaca;
-    --icon-fill: #ffffff; /* White icons for dark theme */
 }
 
 * {
@@ -32,7 +30,7 @@
 
 body {
     background-color: var(--background);
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Inter', sans-serif;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -65,37 +63,11 @@ body {
 .logo {
     display: flex;
     align-items: center;
-    position: relative;
 }
 
 .logo-img {
     max-width: 200px;
     height: auto;
-}
-
-/* Logo theme toggle */
-.logo-white {
-    display: none !important; /* Hidden by default, enforce with !important */
-}
-
-.logo-black {
-    display: block !important; /* Shown by default in light theme */
-}
-
-[data-theme="dark"] .logo-white {
-    display: block !important; /* Show white logo in dark theme */
-}
-
-[data-theme="dark"] .logo-black {
-    display: none !important; /* Hide black logo in dark theme */
-}
-
-[data-theme="light"] .logo-white {
-    display: none !important; /* Hide white logo in light theme */
-}
-
-[data-theme="light"] .logo-black {
-    display: block !important; /* Show black logo in light theme */
 }
 
 .nav-links {
@@ -230,7 +202,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 6rem 1rem; /* Reverted to original */
+    padding: 6rem 1rem;
     margin-top: 2rem;
 }
 
@@ -241,7 +213,7 @@ body {
 }
 
 .headline {
-    font-size: 2.5rem; /* Reverted to original */
+    font-size: 2.5rem;
     font-weight: 700;
     letter-spacing: -1px;
     margin-bottom: 1rem;
@@ -249,7 +221,7 @@ body {
 }
 
 .subheadline {
-    font-size: 1.2rem; /* Reverted to original */
+    font-size: 1.2rem;
     color: var(--footer-text);
     line-height: 1.6;
     margin-bottom: 2rem;
@@ -257,33 +229,28 @@ body {
 
 /* Sections (for money.html) */
 .section {
-    margin: 2rem 0;
+    margin: 3rem 0;
     text-align: left;
-    border-radius: 0.5rem; /* Slightly reduced for a sharper look */
-    padding: 0.5rem; /* Reduced padding */
 }
 
 .section h2 {
     font-size: 1.8rem;
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     color: var(--primary-color);
 }
 
 .section h3 {
     font-size: 1.4rem;
     font-weight: 600;
-    margin: 1rem 0 0.5rem;
+    margin: 1.5rem 0 1rem;
     color: var(--text-color);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
 }
 
 .section p {
     font-size: 1rem;
     line-height: 1.6;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     color: var(--text-color);
 }
 
@@ -295,37 +262,6 @@ body {
 
 .section ul li {
     margin-bottom: 0.5rem;
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
-/* Category Block (for money.html) */
-.category-block {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-}
-
-/* Icons */
-.category-icon {
-    width: 40px;
-    height: 40px;
-    fill: var(--icon-fill);
-}
-
-.illustration {
-    display: block;
-    margin: 0 auto 1rem;
-    width: 200px;
-    height: 150px;
-}
-
-/* Divider */
-.divider {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    margin: 1.5rem 0;
 }
 
 /* Visual Container */
@@ -341,36 +277,6 @@ body {
     border-radius: 0.5rem;
 }
 
-.visual-container .video-container {
-    max-width: 600px;
-}
-
-/* Video Container */
-.video-container {
-    max-width: 900px;
-    border-radius: 1rem;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(76, 175, 80, 0.1); /* Reverted to original green */
-    position: relative;
-    background: #111;
-    margin-bottom: 1rem;
-}
-
-.responsive-iframe {
-    width: 100%;
-    aspect-ratio: 16/9;
-    border: none;
-    display: block;
-}
-
-/* Video Caption */
-.video-caption {
-    text-align: center;
-    font-size: 1rem;
-    color: var(--footer-text);
-    margin-top: 0.5rem;
-}
-
 /* Comparison Table (for money.html) */
 .comparison-table {
     width: 100%;
@@ -384,7 +290,7 @@ body {
 .comparison-table th,
 .comparison-table td {
     padding: 0.8rem;
-    border: 1px solid #B0BEC5; /* Reverted to original gray */
+    border: 1px solid #B0BEC5; /* Logo gray */
     text-align: left;
 }
 
@@ -395,6 +301,24 @@ body {
 
 .comparison-table tr:nth-child(even) {
     background-color: #1F1F1F;
+}
+
+/* Video Container */
+.video-container {
+    max-width: 900px;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(76, 175, 80, 0.15); /* Updated to logo green */
+    position: relative;
+    background: #111;
+    margin-bottom: 3rem;
+}
+
+.responsive-iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border: none;
+    display: block;
 }
 
 /* CTA Button */
@@ -411,7 +335,7 @@ body {
 
 .cta-button:hover {
     background-color: var(--primary-hover);
-    box-shadow: 0 10px 20px rgba(76, 175, 80, 0.2); /* Reverted to original green */
+    box-shadow: 0 10px 20px rgba(76, 175, 80, 0.2); /* Updated to logo green */
     transform: translateY(-2px);
 }
 
@@ -429,8 +353,8 @@ body {
 }
 
 .secondary-button {
-    background-color: #B0BEC5; /* Reverted to original gray */
-    color: #333333;
+    background-color: #B0BEC5; /* Logo gray */
+    color: #333333; /* Updated for better contrast */
     padding: 0.8rem 1.5rem;
     border-radius: 0.5rem;
     text-decoration: none;
@@ -439,7 +363,7 @@ body {
 }
 
 .secondary-button:hover {
-    background-color: #90A4AE;
+    background-color: #90A4AE; /* Darker gray */
     transform: translateY(-2px);
 }
 
@@ -512,21 +436,6 @@ body {
     
     .dropdown-toggle {
         padding-right: 1.5rem;
-    }
-
-    .category-block {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .category-icon {
-        margin-bottom: 0.5rem;
-    }
-
-    .illustration {
-        width: 150px;
-        height: 112px;
     }
 }
 
