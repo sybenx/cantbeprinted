@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="How modern money can be printed or created out of nothing with computers and its effects on people">
-    <title aria-label="Modern Money">Modern Money</title>
+    <meta name="description" content="Learn how money printing drives inflation and how Bitcoin’s fixed supply can help">
+    <title aria-label="Modern Money">Can’t ₿e Printed | How Money Printing Fuels Inflation</title>
     
     <!-- Favicon links -->
     <link rel="icon" type="image/png" href="/favicon/favicon-48x48.png" sizes="48x48" />
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
     <link rel="shortcut icon" href="/favicon/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="Modern Money" />
+    <meta name="apple-mobile-web-app-title" content="Can't Be Printed" />
     <link rel="manifest" href="/favicon/site.webmanifest" />
     
     <!-- Google Fonts -->
@@ -19,7 +19,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     
-    <!-- css stylesheet -->
+    <!-- CSS stylesheet -->
     <link rel="stylesheet" href="/css/styles.css">
     <style>        
         .main-content {
@@ -30,7 +30,7 @@
             animation: fadeIn 1.5s ease-out;
         }
 
-        .video-section {
+        .visual-section {
             margin-bottom: 4rem;
             margin-top: 4rem;
         }
@@ -42,13 +42,19 @@
             justify-content: center;
         }
 
-        .video-container {
+        .visual-container {
             max-width: 900px;
             margin: 0 auto;
             border-radius: 1rem;
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(255, 149, 0, 0.15);
-            background: #111;
+            background: #222;
+        }
+
+        .visual-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
         }
 
         .content-section {
@@ -59,7 +65,7 @@
         .content-section h2 {
             font-size: 2rem;
             margin-bottom: 1rem;
-            color: var(--primary-color);
+            color: #f7931a; /* Bitcoin orange */
         }
 
         .content-section p {
@@ -72,6 +78,30 @@
             color: var(--footer-text);
             font-size: 0.9rem;
             text-decoration: none;
+        }
+
+        .cta-button {
+            background-color: #f7931a; /* Bitcoin orange */
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .cta-button:hover {
+            background-color: #e68a00;
+            transform: translateY(-2px);
+        }
+
+        .secondary-button {
+            background-color: #4b4b4b; /* Neutral gray */
+            color: white;
+        }
+
+        .secondary-button:hover {
+            background-color: #5c5c5c;
+            transform: translateY(-2px);
         }
 
         @media (max-width: 768px) {
@@ -98,16 +128,16 @@
 <body>
     <header class="header">
         <div class="nav-container">
-            <a href="/" class="logo" aria-label="Modern Money">Modern Money</a>
+            <a href="/" class="logo" aria-label="Can't Be Printed">Can’t ₿e Printed</a>
             <nav class="nav-links">
                 <a href="/">Home</a>
                 <a href="/learn">Learn</a>
                 <a href="/buy">Buy</a>
-                <a href="/hope">Hope</a>
+                <a href="/why-bitcoin">Why Bitcoin?</a>
                 <a href="/technical">Technical</a>
                 <button class="theme-toggle" aria-label="Toggle theme">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="theme-icon">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707-.707" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707" />
                     </svg>
                 </button>
             </nav>
@@ -115,26 +145,26 @@
     </header>
 
     <main class="main-content">
-        <section class="video-section">
-            <div class="video-container">
-                <blockquote class="twitter-tweet" data-media-max-width="560"><p lang="en" dir="ltr">JUST IN: 🇺🇸 Elon Musk says the US government makes &quot;money out of thin air.&quot; <a href="https://t.co/dU8qMdJ7bq">pic.twitter.com/dU8qMdJ7bq</a></p>&mdash; Watcher.Guru (@WatcherGuru) <a href="https://twitter.com/WatcherGuru/status/1901666696609341576?ref_src=twsrc%5Etfw">March 17, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <section class="visual-section">
+            <div class="visual-container">
+                <img src="/images/money-printing-vs-inflation.png" alt="Chart showing money supply growth vs inflation impact">
             </div>
         </section>
 
         <section class="content-section">
-            <h2>Modern Money Creation</h2>
-            <p>In today's digital age, money can be created out of nothing with the help of computers. This process, often referred to as "printing money," involves central banks and governments creating new money electronically. Unlike traditional printing presses, this modern method allows for the creation of large sums of money with just a few keystrokes.</p>
-            <p>The ability to create money out of thin air has significant implications for the economy and individuals. On one hand, it provides governments with the flexibility to respond to economic crises, such as during the 2008 financial crisis or the COVID-19 pandemic. On the other hand, it can lead to inflation, devaluing the currency and reducing the purchasing power of individuals.</p>
-            <p>When more money is created without a corresponding increase in goods and services, it can drive up prices, making everyday items more expensive. This can disproportionately affect lower-income individuals, who may struggle to keep up with the rising cost of living. Additionally, the ease of creating money can lead to excessive government debt, which in turn will require more printing.</p>
+            <h2>How Money Printing Drives Inflation</h2>
+            <p>Central banks and governments can create money electronically with a few keystrokes. From 2020-2025, the U.S. money supply grew 38%, fueling inflation (Federal Reserve data). This process helps during crises—like the 2008 financial crisis or COVID-19—by providing funds to stabilize the economy.</p>
+            <p>But there’s a catch. When more money is created without matching goods and services, prices rise. A $100 grocery bill in 2020 costs ~$118 in 2025 due to inflation (U.S. Bureau of Labor Statistics). This hits lower-income families hardest, as their savings buy less over time. It can also lead to more government debt, which may trigger further printing.</p>
+            <p>Unlike fiat, Bitcoin’s supply is capped at 21 million coins. No one can create more, making it a potential hedge against inflation’s erosion of your money’s value.</p>
         </section>
         <div class="button-container">
-            <a href="/learn" class="cta-button">Learn</a>
-            <a href="https://primal.net/home" class="cta-button community-button">Nostr</a>
+            <a href="/learn" class="cta-button">How Does Inflation Work?</a>
+            <a href="/buy" class="secondary-button">Protect Your Money with Bitcoin</a>
         </div>
     </main>
 
     <footer class="footer">
-        <span class="footer-text">© <span id="currentYear"></span> Modern Money. Created by <a href="https://github.com/sybenx" class="footer-text" rel="noopener noreferrer" target="_blank">sybenx</a></span>
+        <span class="footer-text">© <span id="currentYear"></span> Can’t ₿e Printed. Built with facts, not hype. Created by <a href="https://njump.me/npub175rnagjgxtvwvfrdytkqkkn4h062zf2cuwkx0jc8xc9nga895s8qgsef5g">Aaron Herbst</a></span>
     </footer>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
