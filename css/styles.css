@@ -1,6 +1,6 @@
 :root {
-    --primary-color: #6B7280; /* Softer sage green */
-    --primary-hover: #4B5563; /* Darker sage green */
+    --primary-color: #4CAF50; /* Original green */
+    --primary-hover: #2E7D32; /* Original darker green */
 }
 
 :root[data-theme="light"] {
@@ -14,10 +14,10 @@
 }
 
 :root[data-theme="dark"] {
-    --background: #111827; /* Deep charcoal */
+    --background: #1A1A1A; /* Original black */
     --text-color: #ffffff;
-    --footer-text: #E5E7EB; /* Warmer off-white */
-    --header-bg: rgba(17, 24, 39, 0.9); /* Matches new background */
+    --footer-text: #CCCCCC; /* Kept for readability */
+    --header-bg: rgba(0, 0, 0, 0.9);
     --card-bg: rgba(255, 255, 255, 0.15);
     --card-text: #cacaca;
     --icon-fill: #ffffff; /* White icons for dark theme */
@@ -38,8 +38,6 @@ body {
     flex-direction: column;
     color: var(--text-color);
     transition: background-color 0.3s ease, color 0.3s ease;
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAJElEQVQYV2NkYGD4z8DAwMjIyIhTUFBIiIuLi4uLiwsrKysrAwC7ZA0LMPnFbgAAAABJRU5ErkJggg==');
-    background-repeat: repeat;
 }
 
 /* Header Styles */
@@ -232,7 +230,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 6rem 2rem;
+    padding: 6rem 1rem; /* Reverted to original */
     margin-top: 2rem;
 }
 
@@ -243,34 +241,32 @@ body {
 }
 
 .headline {
-    font-size: 2.8rem;
+    font-size: 2.5rem; /* Reverted to original */
     font-weight: 700;
     letter-spacing: -1px;
     margin-bottom: 1rem;
     color: var(--primary-color);
-    line-height: 1.5;
 }
 
 .subheadline {
-    font-size: 1.4rem;
+    font-size: 1.2rem; /* Reverted to original */
     color: var(--footer-text);
-    line-height: 1.5;
+    line-height: 1.6;
     margin-bottom: 2rem;
 }
 
 /* Sections (for money.html) */
 .section {
-    margin: 2rem 0; /* Reduced margin for tighter layout */
+    margin: 2rem 0;
     text-align: left;
-    border-radius: 0.75rem;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0.5rem; /* Slightly reduced for a sharper look */
+    padding: 0.5rem; /* Reduced padding */
 }
 
 .section h2 {
     font-size: 1.8rem;
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     color: var(--primary-color);
 }
 
@@ -316,7 +312,7 @@ body {
 .category-icon {
     width: 40px;
     height: 40px;
-    fill: var(--icon-fill); /* Dynamic fill based on theme */
+    fill: var(--icon-fill);
 }
 
 .illustration {
@@ -354,7 +350,7 @@ body {
     max-width: 900px;
     border-radius: 1rem;
     overflow: hidden;
-    box-shadow: 0 20px 40px rgba(107, 114, 128, 0.1);
+    box-shadow: 0 20px 40px rgba(76, 175, 80, 0.1); /* Reverted to original green */
     position: relative;
     background: #111;
     margin-bottom: 1rem;
@@ -388,7 +384,7 @@ body {
 .comparison-table th,
 .comparison-table td {
     padding: 0.8rem;
-    border: 1px solid #D4D4D8;
+    border: 1px solid #B0BEC5; /* Reverted to original gray */
     text-align: left;
 }
 
@@ -415,7 +411,7 @@ body {
 
 .cta-button:hover {
     background-color: var(--primary-hover);
-    box-shadow: 0 10px 20px rgba(107, 114, 128, 0.2);
+    box-shadow: 0 10px 20px rgba(76, 175, 80, 0.2); /* Reverted to original green */
     transform: translateY(-2px);
 }
 
@@ -433,7 +429,7 @@ body {
 }
 
 .secondary-button {
-    background-color: #D4D4D8;
+    background-color: #B0BEC5; /* Reverted to original gray */
     color: #333333;
     padding: 0.8rem 1.5rem;
     border-radius: 0.5rem;
@@ -443,7 +439,7 @@ body {
 }
 
 .secondary-button:hover {
-    background-color: #A1A1AA;
+    background-color: #90A4AE;
     transform: translateY(-2px);
 }
 
@@ -503,7 +499,7 @@ body {
     }
     
     .subheadline {
-        font-size: 1.2rem;
+        font-size: 1rem;
         padding: 0 1rem;
     }
 
