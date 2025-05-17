@@ -243,7 +243,6 @@ body {
 /* CTA Button */
 .cta-button {
     display: inline-block;
-    margin-top: 2rem;
     padding: 1rem 2rem;
     background-color: var(--primary-color);
     color: var(--background);
