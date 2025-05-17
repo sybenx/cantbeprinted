@@ -13,9 +13,9 @@
 }
 
 :root[data-theme="dark"] {
-    --background: #1A1A1A; /* Aligned with inline styles */
+    --background: #1A1A1A;
     --text-color: #ffffff;
-    --footer-text: #888888;
+    --footer-text: #CCCCCC; /* Updated for better contrast */
     --header-bg: rgba(0, 0, 0, 0.9);
     --card-bg: rgba(255, 255, 255, 0.15);
     --card-text: #cacaca;
@@ -240,6 +240,13 @@ body {
     color: var(--primary-color);
 }
 
+.section h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 1.5rem 0 1rem;
+    color: var(--text-color);
+}
+
 .section p {
     font-size: 1rem;
     line-height: 1.6;
@@ -347,7 +354,7 @@ body {
 
 .secondary-button {
     background-color: #B0BEC5; /* Logo gray */
-    color: white;
+    color: #333333; /* Updated for better contrast */
     padding: 0.8rem 1.5rem;
     border-radius: 0.5rem;
     text-decoration: none;
