@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Discover the revolution of better money with Bitcoin">
-    <title aria-label="Can't Be Printed">Can't ₿e Printed</title>
+    <meta name="description" content="Learn how Bitcoin’s fixed supply protects against inflation’s rising prices">
+    <title aria-label="Can't Be Printed">Can’t ₿e Printed | Fight Inflation with Bitcoin</title>
     
     <!-- Favicon links -->
     <link rel="icon" type="image/png" href="/favicon/favicon-48x48.png" sizes="48x48" />
@@ -19,7 +19,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <!-- css stylesheet -->
+    <!-- CSS stylesheet -->
     <link rel="stylesheet" href="/css/styles.css">
     
     <style>        
@@ -33,6 +33,27 @@
             margin-top: 2rem;
         }
 
+        .text-container {
+            text-align: center;
+            max-width: 600px;
+        }
+
+        .headline {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .subheadline {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .visual-container {
+            margin: 2rem 0;
+        }
+
         .button-container {
             display: flex;
             gap: 1rem;
@@ -40,13 +61,27 @@
             justify-content: center;
         }
 
-        .community-button {
-            background-color: #8a2be2;
+        .cta-button {
+            background-color: #f7931a; /* Bitcoin orange */
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .cta-button:hover {
+            background-color: #e68a00;
+            transform: translateY(-2px);
+        }
+
+        .secondary-button {
+            background-color: #4b4b4b; /* Neutral gray */
             color: white;
         }
 
-        .community-button:hover {
-            background-color: #9945e3;
+        .secondary-button:hover {
+            background-color: #5c5c5c;
             transform: translateY(-2px);
         }
     </style>
@@ -54,12 +89,12 @@
 <body>
     <header class="header">
         <div class="nav-container">
-            <a href="#" class="logo" aria-label="Can't Be Printed">Can't ₿e Printed</a>
+            <a href="#" class="logo" aria-label="Can't Be Printed">Can’t ₿e Printed</a>
             <nav class="nav-links">
                 <a href="/">Home</a>
                 <a href="/learn">Learn</a>
                 <a href="/buy">Buy</a>
-                <a href="/hope">Hope</a>
+                <a href="/why-bitcoin">Why Bitcoin?</a>
                 <a href="/technical">Technical</a>
                 <button class="theme-toggle" aria-label="Toggle theme">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="theme-icon">
@@ -72,16 +107,21 @@
 
     <main class="main-content">
         <div class="text-container">
-            <h1 class="headline">Bitcoin can't be printed</h1>
-            <p class="subheadline">Unlike the Dollar and other inflating currencies, new Bitcoin can't be created for free.</p>
+            <h1 class="headline">Inflation’s Eating Your Money. Bitcoin Fights Back.</h1>
+            <p class="subheadline">Inflation makes groceries, gas, and rent cost more—your $100 buys ~18% less than in 2020. Low inflation helps the economy, but high spikes (like 9% in 2022) hurt savers. Bitcoin’s different: only 21 million coins exist, and no one can print more. Its scarcity can protect your wealth long-term, though prices can swing.</p>
+            <div class="visual-container">
+                <!-- Placeholder for visual (replace with real chart/image) -->
+                <img src="/images/dollar-vs-bitcoin.png" alt="Dollar shrinking vs Bitcoin fixed supply" style="max-width: 300px;">
+            </div>
             <div class="button-container">
-                <a href="/money" class="cta-button">Continue</a>
+                <a href="/money" class="cta-button">Learn About Inflation</a>
+                <a href="/buy" class="secondary-button">Start with Bitcoin</a>
             </div>
         </div>
     </main>
 
     <footer class="footer">
-        <span class="footer-text">© <span id="currentYear"></span> Can't ₿e Printed. Download the Revolution. Created by <a href="https://njump.me/npub175rnagjgxtvwvfrdytkqkkn4h062zf2cuwkx0jc8xc9nga895s8qgsef5g">Aaron Herbst</a></span>
+        <span class="footer-text">© <span id="currentYear"></span> Can’t ₿e Printed. Built with facts, not hype. Created by <a href="https://njump.me/npub175rnagjgxtvwvfrdytkqkkn4h062zf2cuwkx0jc8xc9nga895s8qgsef5g">Aaron Herbst</a></span>
     </footer>
 
     <script src="/js/scripts.js"></script>
