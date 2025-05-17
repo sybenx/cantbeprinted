@@ -264,6 +264,20 @@ body {
     align-items: center;
 }
 
+.secondary-button {
+    background-color: #4b4b4b; /* Neutral gray */
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    }
+
+.secondary-button:hover {
+    background-color: #5c5c5c;
+    transform: translateY(-2px);
+}
+
 /* Footer */
 .footer {
     padding: 1.5rem;
