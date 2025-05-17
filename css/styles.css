@@ -10,6 +10,7 @@
     --header-bg: rgba(255, 255, 255, 0.9);
     --card-bg: rgba(0, 0, 0, 0.05);
     --card-text: #4f4f4f;
+    --icon-fill: #000000; /* Black icons for light theme */
 }
 
 :root[data-theme="dark"] {
@@ -19,6 +20,7 @@
     --header-bg: rgba(17, 24, 39, 0.9); /* Matches new background */
     --card-bg: rgba(255, 255, 255, 0.15);
     --card-text: #cacaca;
+    --icon-fill: #ffffff; /* White icons for dark theme */
 }
 
 * {
@@ -30,13 +32,12 @@
 
 body {
     background-color: var(--background);
-    font-family: 'Roboto', sans-serif; /* Updated to Roboto for coziness */
+    font-family: 'Roboto', sans-serif;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     color: var(--text-color);
     transition: background-color 0.3s ease, color 0.3s ease;
-    /* Subtle noise texture for grounded feel */
     background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAJElEQVQYV2NkYGD4z8DAwMjIyIhTUFBIiIuLi4uLiwsrKysrAwC7ZA0LMPnFbgAAAABJRU5ErkJggg==');
     background-repeat: repeat;
 }
@@ -76,27 +77,27 @@ body {
 
 /* Logo theme toggle */
 .logo-white {
-    display: none; /* Hidden by default */
+    display: none !important; /* Hidden by default, enforce with !important */
 }
 
 .logo-black {
-    display: block; /* Shown by default in light theme */
+    display: block !important; /* Shown by default in light theme */
 }
 
-:root[data-theme="dark"] .logo-white {
-    display: block; /* Show white logo in dark theme */
+[data-theme="dark"] .logo-white {
+    display: block !important; /* Show white logo in dark theme */
 }
 
-:root[data-theme="dark"] .logo-black {
-    display: none; /* Hide black logo in dark theme */
+[data-theme="dark"] .logo-black {
+    display: none !important; /* Hide black logo in dark theme */
 }
 
-:root[data-theme="light"] .logo-white {
-    display: none; /* Hide white logo in light theme */
+[data-theme="light"] .logo-white {
+    display: none !important; /* Hide white logo in light theme */
 }
 
-:root[data-theme="light"] .logo-black {
-    display: block; /* Show black logo in light theme */
+[data-theme="light"] .logo-black {
+    display: block !important; /* Show black logo in light theme */
 }
 
 .nav-links {
@@ -231,7 +232,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 6rem 2rem; /* Increased padding for comfort */
+    padding: 6rem 2rem;
     margin-top: 2rem;
 }
 
@@ -242,28 +243,28 @@ body {
 }
 
 .headline {
-    font-size: 2.8rem; /* Increased for firmness */
+    font-size: 2.8rem;
     font-weight: 700;
     letter-spacing: -1px;
     margin-bottom: 1rem;
     color: var(--primary-color);
-    line-height: 1.5; /* Added for readability */
+    line-height: 1.5;
 }
 
 .subheadline {
-    font-size: 1.4rem; /* Increased for comfort */
+    font-size: 1.4rem;
     color: var(--footer-text);
-    line-height: 1.5; /* Added for readability */
+    line-height: 1.5;
     margin-bottom: 2rem;
 }
 
 /* Sections (for money.html) */
 .section {
-    margin: 3rem 0;
+    margin: 2rem 0; /* Reduced margin for tighter layout */
     text-align: left;
-    border-radius: 0.75rem; /* Softer corners for coziness */
-    padding: 1rem; /* Added padding for comfort */
-    background: rgba(255, 255, 255, 0.05); /* Subtle background for grounding */
+    border-radius: 0.75rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .section h2 {
@@ -276,14 +277,17 @@ body {
 .section h3 {
     font-size: 1.4rem;
     font-weight: 600;
-    margin: 1.5rem 0 1rem;
+    margin: 1rem 0 0.5rem;
     color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .section p {
     font-size: 1rem;
     line-height: 1.6;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     color: var(--text-color);
 }
 
@@ -295,6 +299,37 @@ body {
 
 .section ul li {
     margin-bottom: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Category Block (for money.html) */
+.category-block {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+}
+
+/* Icons */
+.category-icon {
+    width: 40px;
+    height: 40px;
+    fill: var(--icon-fill); /* Dynamic fill based on theme */
+}
+
+.illustration {
+    display: block;
+    margin: 0 auto 1rem;
+    width: 200px;
+    height: 150px;
+}
+
+/* Divider */
+.divider {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 1.5rem 0;
 }
 
 /* Visual Container */
@@ -311,7 +346,7 @@ body {
 }
 
 .visual-container .video-container {
-    max-width: 600px; /* Slightly smaller for coziness */
+    max-width: 600px;
 }
 
 /* Video Container */
@@ -319,10 +354,10 @@ body {
     max-width: 900px;
     border-radius: 1rem;
     overflow: hidden;
-    box-shadow: 0 20px 40px rgba(107, 114, 128, 0.1); /* Softer shadow with new primary color */
+    box-shadow: 0 20px 40px rgba(107, 114, 128, 0.1);
     position: relative;
     background: #111;
-    margin-bottom: 1rem; /* Reduced for tighter integration */
+    margin-bottom: 1rem;
 }
 
 .responsive-iframe {
@@ -353,7 +388,7 @@ body {
 .comparison-table th,
 .comparison-table td {
     padding: 0.8rem;
-    border: 1px solid #D4D4D8; /* Updated to new secondary color */
+    border: 1px solid #D4D4D8;
     text-align: left;
 }
 
@@ -380,7 +415,7 @@ body {
 
 .cta-button:hover {
     background-color: var(--primary-hover);
-    box-shadow: 0 10px 20px rgba(107, 114, 128, 0.2); /* Updated to new primary color */
+    box-shadow: 0 10px 20px rgba(107, 114, 128, 0.2);
     transform: translateY(-2px);
 }
 
@@ -398,7 +433,7 @@ body {
 }
 
 .secondary-button {
-    background-color: #D4D4D8; /* Updated to warmer taupe */
+    background-color: #D4D4D8;
     color: #333333;
     padding: 0.8rem 1.5rem;
     border-radius: 0.5rem;
@@ -408,7 +443,7 @@ body {
 }
 
 .secondary-button:hover {
-    background-color: #A1A1AA; /* Darker taupe */
+    background-color: #A1A1AA;
     transform: translateY(-2px);
 }
 
@@ -481,6 +516,21 @@ body {
     
     .dropdown-toggle {
         padding-right: 1.5rem;
+    }
+
+    .category-block {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .category-icon {
+        margin-bottom: 0.5rem;
+    }
+
+    .illustration {
+        width: 150px;
+        height: 112px;
     }
 }
 
