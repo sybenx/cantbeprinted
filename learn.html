@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn about the history of money, inflation, and Bitcoin to make informed financial decisions">
+    <meta name="description" content="Learn about the history of money and how inflation affects your finances">
     <title aria-label="Can't Be Printed">Can’t Be Printed | Learn</title>
     
     <!-- Favicon links -->
@@ -23,60 +23,6 @@
     <link rel="stylesheet" href="/css/styles.css">
 
     <style>
-        .video-section {
-            margin: 4rem 0;
-        }
-        .video-container {
-            max-width: 900px;
-            margin: 0 auto;
-            border-radius: 1rem;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(255, 149, 0, 0.15); /* Orange shadow */
-            background: #111;
-        }
-        .pdf-section {
-            text-align: center;
-            margin: 4rem 0;
-            max-width: 900px;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .pdf-button {
-            display: inline-flex;
-            align-items: center;
-            padding: 1.25rem 2.5rem;
-            background: var(--card-bg);
-            color: var(--text-color);
-            text-decoration: none;
-            border-radius: 1rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(126, 126, 126, 0.5);
-            min-width: 250px;
-        }
-        .pdf-button:hover {
-            background: #FF9500; /* Orange hover */
-            color: #000000;
-            box-shadow: 0 10px 20px rgba(255, 149, 0, 0.2);
-            border: 1px solid #FF9500;
-        }
-        .pdf-image {
-            width: 70px;
-            height: auto;
-            margin-right: 20px;
-        }
-        .pdf-text-container {
-            text-align: left;
-        }
-        .pdf-button-title {
-            font-size: 1.1rem;
-            margin-bottom: 0.25rem;
-        }
-        .pdf-button-subtitle {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
         .history-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -98,34 +44,9 @@
             font-size: 1.5rem;
             font-weight: 700;
         }
-        .footnote {
-            margin: 4rem 0;
-            font-style: italic;
-            color: var(--footer-text);
-            text-align: center;
-        }
         @media (max-width: 768px) {
             .history-grid {
                 grid-template-columns: 1fr;
-            }
-            .pdf-section {
-                gap: 1rem;
-            }
-            .pdf-button {
-                padding: 1rem 2rem;
-                min-width: 220px;
-            }
-        }
-        @media (max-width: 480px) {
-            .history-card h3 {
-                font-size: 1.3rem;
-            }
-            .footnote {
-                font-size: 0.9rem;
-            }
-            .pdf-button {
-                width: 100%;
-                padding: 1rem 1.5rem;
             }
         }
     </style>
@@ -133,17 +54,16 @@
 <body>
     <header class="header">
         <div class="nav-container">
-            <a href="/" class="logo" aria-label="Can't Be Printed">
-                <img src="/logo/Can't-logo-wide-white.svg" alt="Can’t Be Printed logo" class="logo-img logo-white">
-                <img src="/logo/Can't-logo-wide.svg" alt="Can’t Be Printed logo" class="logo-img logo-black">
+            <a href="/" class="logo" aria-label="Can’t Be Printed">
+                <img src="/logo/Can’t-logo-wide-white.svg" alt="Can’t Be Printed logo" class="logo-img logo-white">
+                <img src="/logo/Can’t-logo-wide.svg" alt="Can’t Be Printed logo" class="logo-img logo-black">
             </a>
             <nav class="nav-links">
                 <a href="/">Home</a>
                 <a href="/learn">Learn</a>
+                <a href="/bitcoin">Bitcoin</a>
                 <a href="/buy">Buy</a>
-                <a href="/hope">Hope</a>
-                <a href="/solutions">Solutions</a>
-                <a href="/technical">Technical</a>
+                <a href="/about">About</a>
                 <button class="theme-toggle" aria-label="Toggle theme" role="button">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="theme-icon">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
@@ -155,79 +75,45 @@
 
     <main class="main-content">
         <div class="text-container">
-            <h1 class="headline">Learn About Money and Bitcoin</h1>
-            <p class="subheadline">Discover the history of money, how inflation impacts your finances, and why Bitcoin is gaining traction as a tool for financial security.</p>
+            <h1 class="headline">Understand Your Money</h1>
+            <p class="subheadline">Explore the history of money and how inflation shapes your financial future, with clear insights to help you stay informed.</p>
             
             <section class="section">
                 <h2>The History of Money</h2>
                 <div class="history-grid">
                     <div class="history-card">
                         <h3>Primitive Money</h3>
-                        <p>Early civilizations used various forms of money, from shells to large stones. The key was always scarcity and durability. The Rai stones of Yap demonstrated that physical possession wasn’t necessary—only unviolable record-keeping mattered.</p>
+                        <p>Early civilizations used shells and stones as money, valued for scarcity and durability. The Rai stones of Yap showed that trust in record-keeping could matter more than physical possession.</p>
                     </div>
                     <div class="history-card">
                         <h3>Precious Metals Era</h3>
-                        <p>Gold emerged as the dominant form of money due to its scarcity, durability, and difficulty to produce. This “hard money” standard led to humanity’s greatest achievements, from the Renaissance to the Industrial Revolution.</p>
+                        <p>Gold became the standard due to its rarity and durability, fueling progress from the Renaissance to the Industrial Revolution with a stable “hard money” system.</p>
                     </div>
                     <div class="history-card">
                         <h3>The Paper Era</h3>
-                        <p>The shift to paper money, initially backed by gold, promised convenience but led to increased government control and systematic devaluation through inflation, affecting savers’ purchasing power.</p>
+                        <p>Paper money, initially backed by gold, offered convenience but allowed governments to increase money supply, leading to inflation that affects savers’ purchasing power.</p>
                     </div>
                 </div>
             </section>
             
             <section class="section">
-                <h2>Understanding Inflation</h2>
-                <p>Inflation is the rate at which prices for goods and services rise, reducing what your money can buy. For example, $100 in 2015 might only buy $120 worth of goods today. It’s driven by factors like increased money supply, demand, or supply chain issues.</p>
+                <h2>What Is Inflation?</h2>
+                <p>Inflation is the rate at which prices for goods and services rise, reducing your money’s buying power. For example, $100 in 2015 might buy only $120 worth of goods today.</p>
                 <h3>Key Drivers</h3>
                 <ul>
-                    <li><strong>Money Supply:</strong> When central banks increase money creation, it can lead to higher prices.</li>
-                    <li><strong>Demand-Pull:</strong> High consumer demand for limited goods pushes prices up.</li>
-                    <li><strong>Cost-Push:</strong> Rising production costs (e.g., oil, labor) increase prices.</li>
+                    <li><strong>Money Supply:</strong> More money in circulation can raise prices.</li>
+                    <li><strong>Demand-Pull:</strong> High demand for limited goods increases costs.</li>
+                    <li><strong>Cost-Push:</strong> Rising production costs (e.g., fuel) drive prices up.</li>
                 </ul>
             </section>
             
             <section class="section">
                 <h2>The Money Supply</h2>
-                <p>Since the U.S. abandoned the gold standard in 1971, the dollar’s value isn’t tied to a fixed asset. Central banks can increase the money supply to fund deficits or stimulate growth. From 2020–2025, the U.S. money supply grew by 38%, contributing to inflation spikes like 9% in 2022.</p>
+                <p>Since 1971, the U.S. dollar has been unbacked by gold, allowing central banks to expand the money supply. From 2020–2025, it grew by 38%, fueling inflation spikes like 9% in 2022.</p>
             </section>
-            
-            <section class="video-section">
-                <h2>Bitcoin in Action</h2>
-                <p>Communities like Witsand, South Africa, have embraced Bitcoin as a currency, finding security in its decentralized, fixed-supply design. Watch how they’ve adopted it for local transactions.</p>
-                <div class="video-container">
-                    <iframe
-                        class="responsive-iframe"
-                        src="https://www.youtube.com/embed/wp2SonEgquQ?modestbranding=1&controls=1&showinfo=0&rel=0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen
-                        aria-label="Video about Witsand, South Africa, adopting Bitcoin">
-                    </iframe>
-                </div>
-            </section>
-            
-            <section class="pdf-section">
-                <a href="https://docs.google.com/viewerng/viewer?url=https://europeanbitcoiners.com/content/files/2023/07/Bitcoin_Everything_in_21_Pages_v1.8_LongTermSocial.pdf" class="pdf-button">
-                    <img src="/images/bitcoin21pages.png" alt="Bitcoin in 21 Pages cover" class="pdf-image">
-                    <div class="pdf-text-container">
-                        <div class="pdf-button-title">Download the PDF</div>
-                        <div class="pdf-button-subtitle">Bitcoin in 21 Pages</div>
-                    </div>
-                </a>
-            </section>
-            
-            <section class="section">
-                <h2>Why Bitcoin?</h2>
-                <p>Bitcoin, created in 2009, is a decentralized digital currency with a fixed supply of 21 million coins. Some view it as a hedge against inflation because it can’t be printed like dollars. Its price can be volatile (e.g., 20% drop in Q1 2025), but its independence from central banks appeals to those seeking financial control.</p>
-                <p>Start small with resources like <em>The Bitcoin Standard</em> or the PDF above to build confidence. Bitcoin’s complexity is real, but learning step-by-step can make it accessible.</p>
-            </section>
-            
-            <div class="footnote">
-                <p>“The best form of money in history has always been the one that was hardest to produce. It forced people to build value through work and innovation rather than monetary manipulation.”</p>
-            </div>
             
             <div class="button-container">
-                <a href="/buy" class="cta-button">Start Investing</a>
+                <a href="/bitcoin" class="cta-button">Discover Bitcoin</a>
                 <a href="/about" class="secondary-button">Our Story</a>
             </div>
         </div>
