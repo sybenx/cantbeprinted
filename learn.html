@@ -23,6 +23,14 @@
     <link rel="stylesheet" href="/css/styles.css?v=1">
 
     <style>
+        .main-content {
+            padding: 5rem 1rem 2rem;
+        }
+        @media (max-width: 768px) {
+            .main-content {
+                padding-top: 80px; /* Adjust for header height on mobile */
+            }
+        }
         .history-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

@@ -20,7 +20,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
     <!-- CSS stylesheet -->
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css?v=1">
+
+    <style>
+        .main-content {
+            padding: 5rem 1rem 2rem;
+        }
+        @media (max-width: 768px) {
+            .main-content {
+                padding-top: 80px; /* Adjust for header height on mobile */
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -31,10 +42,10 @@
             </a>
             <nav class="nav-links">
                 <a href="/">Home</a>
-                <a href="/learn">Learn</a>
-                <a href="/bitcoin">Bitcoin</a>
-                <a href="/buy">Buy</a>
-                <a href="/about">About</a>
+                <a href="/learn.html">Learn</a>
+                <a href="/bitcoin.html">Bitcoin</a>
+                <a href="/buy.html">Buy</a>
+                <a href="/about.html">About</a>
                 <button class="theme-toggle" aria-label="Toggle theme" role="button">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="theme-icon">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
@@ -56,8 +67,8 @@
                 <p>If you’re uncertain about money, start small. Read, research, and experiment with Bitcoin or other assets. Can’t Be Printed offers knowledge and stories, not sales pitches, to guide you toward confidence in your financial choices.</p>
             </section>
             <div class="button-container">
-                <a href="/bitcoin" class="cta-button">Discover Bitcoin</a>
-                <a href="/learn" class="secondary-button">Learn More</a>
+                <a href="/bitcoin.html" class="cta-button">Discover Bitcoin</a>
+                <a href="/learn.html" class="secondary-button">Learn More</a>
             </div>
         </div>
     </main>
