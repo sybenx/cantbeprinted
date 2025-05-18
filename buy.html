@@ -23,20 +23,29 @@
         }
         @media (max-width: 768px) {
             .main-content {
-                padding-top: 90px; /* Adjust for smaller header (~80px) */
+                padding-top: 70px; /* Adjust for smaller header (~60px) */
             }
             .header {
-                height: 80px; /* Smaller header height */
+                min-height: 60px;
             }
             .nav-container {
-                padding: 0.5rem 1rem;
+                padding: 0.2rem 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
             }
             .logo-img {
-                max-width: 150px; /* Smaller logo */
+                max-width: 120px; /* ~24px height */
+            }
+            .nav-links {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.3rem;
+                align-items: center;
             }
             .nav-links a, .theme-toggle {
-                font-size: 0.9rem; /* Smaller nav text */
-                padding: 0.3rem 0.5rem;
+                font-size: 0.8rem;
+                padding: 0.2rem 0.4rem;
             }
         }
         .hero-title {
