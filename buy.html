@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn how to buy and hold Bitcoin - perfect for beginners">
+    <meta name="description" content="Buy Bitcoin easily with Cash App or cheaply with Strike">
     <title aria-label="Start Your Bitcoin Journey">Can’t Be Printed | Buy Bitcoin</title>
 
     <!-- Favicon links -->
@@ -11,7 +11,7 @@
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
     <link rel="shortcut icon" href="/favicon/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="Can't Be Printed" />
+    <meta name="apple-mobile-web-app-title" content="Can’t Be Printed" />
     <link rel="manifest" href="/favicon/site.webmanifest" />
     
     <link rel="stylesheet" href="/css/styles.css?v=1">
@@ -19,8 +19,7 @@
     
     <style>
         .main-content {
-            padding: 6rem 1rem 3rem;
-            animation: fadeIn 1.5s ease-out;
+            padding: 5rem 1rem 2rem;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -29,283 +28,114 @@
         .hero-title {
             font-size: 2.5rem;
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             color: #FF9500;
         }
         .hero-subtitle {
             font-size: 1.1rem;
             color: var(--footer-text);
             line-height: 1.6;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             max-width: 800px;
-        }
-        .hero-section {
-            max-width: 900px;
-            margin: 0 auto 2rem;
             text-align: center;
-            width: 100%;
         }
-        .buying-options {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 2rem auto;
-            width: 100%;
-            padding: 0 1rem;
-        }
-        .app-card {
-            padding: 1.5rem;
-            text-align: center;
-            transition: all 0.3s ease;
+        .app-section {
+            max-width: 600px;
+            margin: 1rem auto;
+            padding: 1.2rem;
+            background: var(--card-bg);
             border-radius: 1rem;
             width: 100%;
-            margin: 0;
-        }
-        .cashapp-card {
-            background: rgba(0, 214, 50, 0.1);
-            border: 1px solid #00D632;
-        }
-        .strike-card {
-            background: rgb(0, 0, 0, 0.05);
-            border: 1px solid #7d7d7d;
-        }
-        .app-logo {
-            width: 60px;
-            height: 60px;
-            margin: 0 auto 1rem;
-            border-radius: 0.8rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-style: italic;
-            font-weight: bold;
-            padding-right: 2px;
-        }
-        .cashapp-logo {
-            background: #00D632;
-        }
-        .strike-logo {
-            background: #000000;
-            border: 1px solid #7d7d7d;
+            text-align: center;
         }
         .app-title {
             font-size: 1.6rem;
             font-weight: 700;
-            margin-bottom: 0.8rem;
-        }
-        .cashapp-title {
-            color: #00D632;
-        }
-        .strike-title {
-            color: #ffffff;
+            margin-bottom: 0.6rem;
+            color: var(--text-color);
         }
         .app-description {
-            margin: 1rem 0;
-            line-height: 1.6;
             font-size: 1rem;
             color: var(--footer-text);
-        }
-        .features-list {
-            text-align: left;
-            margin: 1rem 0;
-            padding-left: 1.5rem;
-            color: var(--text-color);
-        }
-        .features-list li {
+            line-height: 1.6;
             margin-bottom: 0.8rem;
-            line-height: 1.5;
-        }
-        .step-list {
-            text-align: left;
-            margin: 1rem 0;
-            padding-left: 2rem;
-            counter-reset: steps;
-            color: var(--text-color);
-        }
-        .step-list li {
-            margin-bottom: 0.8rem;
-            line-height: 1.5;
-            position: relative;
-            padding-left: 2rem;
-        }
-        .step-list li::before {
-            counter-increment: steps;
-            content: counter(steps);
-            position: absolute;
-            width: 1.5rem;
-            height: 1.5rem;
-            background: #FF9500;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-            font-weight: bold;
-            left: -1.4rem;
-            color: #000000;
-        }
-        .download-button {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            border-radius: 0.5rem;
-            text-decoration: none;
-            font-weight: 600;
-            color: white;
-            font-size: 1rem;
-            margin-top: 0.8rem;
-            transition: all 0.3s ease;
-        }
-        .cashapp-button {
-            background: #00D632;
-            border: 1px solid #00D632;
-        }
-        .cashapp-button:hover {
-            background: var(--background);
-            color: #00D632;
-            border: 1px solid #00D632;
-        }
-        .cashapp-button-inverted {
-            background: var(--background);
-            color: #00D632;
-            border: 1px solid #00D632;
-        }
-        .cashapp-button-inverted:hover {
-            background: #00D632;
-            border: 1px solid white;
-            color: white;
-        }
-        .strike-button {
-            background: #000000;
-            border: 1px solid #7d7d7d;
-        }
-        .strike-button:hover {
-            background: #fff;
-            color: #000;
         }
         .qr-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 0.8rem;
             justify-content: center;
-            margin-top: 1rem;
+            margin: 0.8rem 0;
         }
         .qr-box {
-            border-radius: 1rem;
-            padding: 1rem;
             text-align: center;
             flex: 1;
-            min-width: 150px;
-            max-width: 200px;
+            min-width: 120px;
+            max-width: 140px;
         }
         .qr {
-            width: 100%;
+            width: 120px;
             border-radius: 0.5rem;
+            display: block;
+            margin: 0 auto 0.5rem;
+        }
+        .qr-label {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
         }
         .qr-note {
             font-size: 0.9rem;
             color: var(--footer-text);
-            margin-bottom: 1rem;
+            margin: 0.5rem 0;
+        }
+        .download-link {
+            display: inline-block;
+            padding: 0.7rem 1.4rem;
+            background: #FF9500;
+            color: #000000;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            margin: 0.5rem 0.2rem;
+            transition: all 0.3s ease;
+        }
+        .download-link:hover {
+            background: var(--primary-color);
+            color: var(--background);
         }
         .note-section {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 1.5rem;
+            max-width: 600px;
+            margin: 1.5rem auto;
+            padding: 1.2rem;
             background: var(--card-bg);
             border-radius: 1rem;
             border-left: 4px solid #FF9500;
             width: 100%;
+            text-align: center;
         }
         .note-title {
-            color: #FF9500;
             font-size: 1.2rem;
-            margin-bottom: 1rem;
+            color: #FF9500;
+            margin-bottom: 0.8rem;
             font-weight: 600;
-        }
-        .book-section {
-            text-align: center;
-            margin: 2rem 0;
-            max-width: 900px;
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            width: 100%;
-        }
-        .book-image {
-            width: 50px;
-            height: auto;
-            margin-right: 10px;
-            flex-shrink: 0;
-        }
-        .book-button {
-            display: inline-flex;
-            align-items: center;
-            padding: 1rem;
-            background: var(--card-bg);
-            color: var(--text-color);
-            text-decoration: none;
-            border-radius: 0.8rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 1px solid var(--card-text);
-            width: 100%;
-            max-width: 350px;
-        }
-        .book-button:hover {
-            background: #FF9500;
-            color: #000000;
-            box-shadow: 0 5px 15px rgba(255, 149, 0, 0.2);
-        }
-        .book-button-jade {
-            background: rgba(0, 176, 147, 0.05);
-            border: 1px solid #00B093;
-        }
-        .book-button-jade:hover {
-            background: #00B093;
-        }
-        .book-button-aqua {
-            background: rgba(0, 160, 204, 0.05);
-            border: 1px solid #00A1CC;
-        }
-        .book-button-aqua:hover {
-            background: #00A1CC;
-        }
-        .book-text-container {
-            flex-grow: 1;
-            text-align: left;
-            min-width: 0;
-        }
-        .book-button-title {
-            font-size: 1.1rem;
-            margin-bottom: 0.3rem;
-        }
-        .book-button-subtitle {
-            font-size: 0.9rem;
-            opacity: 0.8;
         }
         @media (max-width: 768px) {
-            .buying-options {
-                grid-template-columns: 1fr;
-                margin: 1.5rem auto;
-                padding: 0 0.5rem;
-            }
-            .app-card {
-                padding: 1.2rem;
-            }
-            .book-button {
-                padding: 0.8rem;
-            }
-            .book-image {
-                width: 40px;
-                margin-right: 8px;
+            .app-section {
+                padding: 1rem;
             }
             .hero-title {
                 font-size: 2rem;
             }
             .hero-subtitle {
                 font-size: 1rem;
+            }
+            .qr {
+                width: 100px;
+            }
+            .qr-box {
+                min-width: 100px;
+                max-width: 120px;
             }
         }
     </style>
@@ -336,106 +166,50 @@
         <div class="text-container">
             <section class="hero-section">
                 <h1 class="hero-title">Buy Bitcoin</h1>
-                <p class="hero-subtitle">Start your Bitcoin journey with easy or cost-effective options, tailored for beginners.</p>
+                <p class="hero-subtitle">Start your Bitcoin journey with the easiest or cheapest options, designed for beginners.</p>
+            </section>
+
+            <section class="app-section">
+                <h2 class="app-title">Cash App</h2>
+                <p class="app-description">The easiest way to buy Bitcoin—I use it for direct deposits from every paycheck, with fast, free transfers to my wallet. Start with as little as $1, but note the $2,000 daily withdrawal limit.</p>
+                <p class="qr-note">Choose referral to support free content like this (you get $5!) or direct to download:</p>
+                <div class="qr-container">
+                    <div class="qr-box">
+                        <div class="qr-label">Referral ($5 bonus)</div>
+                        <img src="/images/cashappqr.png" class="qr" alt="Cash App Referral QR Code" style="background: var(--background); border:1px solid #00D632;">
+                    </div>
+                    <div class="qr-box">
+                        <div class="qr-label">Direct Link</div>
+                        <img src="/images/cashapp_direct_qr.png" class="qr" alt="Cash App Direct QR Code" style="background: var(--background); border:1px solid #00D632;">
+                    </div>
+                </div>
+                <a href="https://cash.app/app/KSJSKCW" class="download-link">Download with Referral ($5 bonus)</a>
+                <a href="https://cash.app/app/" class="download-link">Download Directly</a>
+            </section>
+
+            <section class="app-section">
+                <h2 class="app-title">Strike</h2>
+                <p class="app-description">The cheapest option, perfect for large Bitcoin purchases with low fees, free transfers to your wallet, and no withdrawal limits, using the Lightning Network.</p>
+                <p class="qr-note">Choose referral to support free content like this (buy/sell $500 without fees!) or direct to download:</p>
+                <div class="qr-container">
+                    <div class="qr-box">
+                        <div class="qr-label">Referral (Fee-Free $500 Trade)</div>
+                        <img src="/images/strikeqrwhite.png" class="qr" alt="Strike Referral QR Code" style="background: black; border:1px solid gray;">
+                    </div>
+                    <div class="qr-box">
+                        <div class="qr-label">Direct Link</div>
+                        <img src="/images/strike_direct_qr.png" class="qr" alt="Strike Direct QR Code" style="background: black; border:1px solid gray;">
+                    </div>
+                </div>
+                <a href="https://invite.strike.me/BNUI2T" class="download-link">Download with Referral (Fee-Free $500 Trade)</a>
+                <a href="https://invite.strike.me/" class="download-link">Download Directly</a>
             </section>
 
             <section class="note-section">
-                <h2 class="note-title">What is HODLing?</h2>
-                <p>HODL means "Hold On for Dear Life"—buying Bitcoin and keeping it safe long-term, like a digital savings account. HODLers save regularly and wait patiently, avoiding market timing.</p>
+                <h3 class="note-title">🔑 Security Tip</h3>
+                <p>After buying Bitcoin, move it to a wallet where you control the private keys. “Not your keys, not your coins” means exchanges are great for buying, but your own wallet is safest for storage.</p>
             </section>
 
-            <section class="buying-options">
-                <div class="app-card cashapp-card">
-                    <div class="app-logo cashapp-logo" style="color: white;">$</div>
-                    <h3 class="app-title cashapp-title">Cash App</h3>
-                    <p class="app-description">Easiest for beginners—I use it for direct deposits from every paycheck. Buy Bitcoin with as little as $1, though withdrawals are capped at $2,000/day.</p>
-                    <h4 style="color: #00D632; margin: 1.5rem 0 0.8rem;">Why Choose Cash App?</h4>
-                    <ul class="features-list">
-                        <li>Already have Cash App? You're halfway there!</li>
-                        <li>Buy Bitcoin with as little as $1</li>
-                        <li>Instant deposits from your bank</li>
-                        <li>Limited to $2,000 Bitcoin withdrawal per day</li>
-                    </ul>
-                    <h4 style="color: #00D632; margin: 1.5rem 0 0.8rem;">Getting Started</h4>
-                    <ol class="step-list">
-                        <li>Download Cash App from your app store</li>
-                        <li>Link your bank account or debit card</li>
-                        <li>Tap the Bitcoin button (look for the ₿ symbol)</li>
-                        <li>Choose how much you want to buy</li>
-                        <li>That's it! You now own Bitcoin</li>
-                    </ol>
-                    <a href="https://cash.app/app/" class="download-button cashapp-button">Download Cash App</a>
-                    <p class="qr-note">Choose a direct link or support me with a referral (you get $5!):</p>
-                    <div class="qr-container">
-                        <div class="qr-box" style="border: 1px solid #00d632; background: #00d632;">
-                            <div style="font-size: 0.9rem; color: #4d4d4d; margin-bottom: 0.5rem;">Referral ($5 bonus)</div>
-                            <img src="/images/cashappqr.svg" class="qr" alt="Cash App Referral QR Code" style="background: var(--background); border:1px solid #00D632;">
-                        </div>
-                        <div class="qr-box" style="border: 1px solid #00d632; background: #00d632;">
-                            <div style="font-size: 0.9rem; color: #4d4d4d; margin-bottom: 0.5rem;">Direct Link</div>
-                            <img src="/images/cashapp_direct_qr.svg" class="qr" alt="Cash App Direct QR Code" style="background: var(--background); border:1px solid #00D632;">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="app-card strike-card">
-                    <div class="app-logo strike-logo">
-                        <svg xmlns="http://www.w3.org/2000/svg" focusable="false" fill="white" data-theme="white" width="40" height="40" viewBox="0 0 20 20"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.31317 8.49362C2.82011 8.30435 2.57384 7.75121 2.76311 7.25815C2.95238 6.76509 3.50552 6.51881 3.99858 6.70808L7.55779 8.07434C7.56174 8.07591 7.5657 8.07746 7.56967 8.07899L9.35521 8.76439C9.84827 8.95366 10.4014 8.70738 10.5907 8.21432C10.7799 7.72126 10.5337 7.16812 10.0406 6.97885L10.0404 6.97877C10.0405 6.97874 10.0405 6.9787 10.0406 6.97866L8.25506 6.29326C7.762 6.104 7.51572 5.55086 7.70499 5.0578C7.89426 4.56473 8.4474 4.31846 8.94046 4.50773L14.1921 6.52363C14.2046 6.52845 14.217 6.53352 14.2293 6.53881C14.2519 6.54711 14.2745 6.55559 14.2971 6.56425C16.7624 7.5106 17.9938 10.2763 17.0474 12.7416C16.1011 15.2069 13.3354 16.4383 10.8701 15.4919C10.8226 15.4737 10.7756 15.4548 10.729 15.4353C10.7065 15.4285 10.684 15.4208 10.6616 15.4122L5.51344 13.436C5.02038 13.2467 4.77411 12.6936 4.96338 12.2005C5.15265 11.7075 5.70579 11.4612 6.19885 11.6504L7.98415 12.3358C7.98411 12.3356 7.98407 12.3355 7.98403 12.3354L7.9844 12.3355C8.47746 12.5248 9.0306 12.2785 9.21987 11.7854C9.40914 11.2924 9.16287 10.7392 8.66981 10.55L7.86633 10.2416C7.86634 10.2415 7.86634 10.2415 7.86635 10.2414L3.31317 8.49362Z" fill="white"></path></svg>    
-                    </div>
-                    <h3 class="app-title strike-title">Strike</h3>
-                    <p class="app-description">Cheapest option, ideal for large purchases with low fees and no withdrawal limits, powered by the Lightning Network.</p>
-                    <h4 style="color: #ffffff; margin: 1.5rem 0 0.8rem;">Why Choose Strike?</h4>
-                    <ul class="features-list">
-                        <li>Lowest fees in the industry</li>
-                        <li>Lightning-fast Bitcoin transfers</li>
-                        <li>Clean, simple interface</li>
-                        <li>No Bitcoin withdrawal limits</li>
-                    </ul>
-                    <h4 style="color: #ffffff; margin: 1.5rem 0 0.8rem;">Getting Started</h4>
-                    <ol class="step-list">
-                        <li>Download Strike from your app store</li>
-                        <li>Create an account and verify your identity</li>
-                        <li>Connect your bank account</li>
-                        <li>Tap "Buy Bitcoin"</li>
-                        <li>Choose your amount and confirm</li>
-                    </ol>
-                    <a href="https://invite.strike.me/" class="download-button strike-button">Download Strike</a>
-                    <p class="qr-note">Choose a direct link or support me with a referral (trade $500 free!):</p>
-                    <div class="qr-container">
-                        <div class="qr-box" style="border: 1px solid white; background: white">
-                            <div style="font-size: 0.9rem; color: #4d4d4d; margin-bottom: 0.5rem;">Referral ($500 free trade)</div>
-                            <img src="/images/strikeqrwhite.svg" class="qr" alt="Strike Referral QR Code" style="border: 1px solid gray; background: black;">
-                        </div>
-                        <div class="qr-box" style="border: 1px solid white; background: white">
-                            <div style="font-size: 0.9rem; color: #4d4d4d; margin-bottom: 0.5rem;">Direct Link</div>
-                            <img src="/images/strike_direct_qr.svg" class="qr" alt="Strike Direct QR Code" style="border: 1px solid gray; background: black;">
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="note-section">
-                <h3 class="note-title">🔑 Important Security Tip</h3>
-                <p>After buying Bitcoin, move it to a wallet where you control the private keys. “Not your keys, not your coins” means exchanges are great for buying, but your own wallet is safest for long-term storage.</p>
-            </section>
-            
-            <section class="book-section">
-                <a href="https://aquawallet.io/" class="book-button book-button-aqua">
-                    <img src="/images/aqua.jpg" alt="Aqua Wallet" class="book-image">
-                    <div class="book-text-container">
-                        <div class="book-button-title">Aqua Wallet</div>
-                        <div class="book-button-subtitle">Easy-to-use phone wallet</div>
-                    </div>
-                </a>
-                <a href="https://store.blockstream.com/?code=nzOJZMjiRCSX" class="book-button book-button-jade">
-                    <img src="/images/bsjade.png" alt="Blockstream Jade" class="book-image">
-                    <div class="book-text-container">
-                        <div class="book-button-title">Blockstream Jade (referral)</div>
-                        <div class="book-button-subtitle">Highly secure device vault</div>
-                    </div>
-                </a>
-            </section>
-            
             <div class="button-container">
                 <a href="/bitcoin.html" class="cta-button">Learn About Bitcoin</a>
                 <a href="/about.html" class="secondary-button">Our Story</a>
