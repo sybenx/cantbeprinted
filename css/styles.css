@@ -105,7 +105,7 @@ body {
 }
 
 .main-content {
-    padding: 5rem 1rem 2rem;
+    padding: 10rem 1rem 2rem; /* Increased padding-top to clear header */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -238,20 +238,20 @@ body {
 
 @media (max-width: 768px) {
     .main-content {
-        padding-top: 110px; /* Adjusted to ensure content clears shorter header */
+        padding-top: 10rem; /* Consistent with desktop to clear header */
     }
     .header {
-        height: 100px; /* Reduced from 133px to ~100px */
+        max-height: 80px; /* Constrain header height */
         overflow: hidden;
     }
     .nav-container {
-        padding: 1rem 1.25rem 0.1rem 1.25rem; /* Reduced bottom padding */
+        padding: 0.8rem 1rem 0.05rem 1rem; /* Tighter padding */
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
     .logo-img {
-        max-width: 120px;
+        max-width: 100px; /* Smaller logo to save space */
     }
     .nav-links {
         display: flex;
@@ -261,14 +261,14 @@ body {
         overflow: hidden;
     }
     .nav-links a, .theme-toggle {
-        font-size: 0.7rem;
-        padding: 0.05rem 0.2rem; /* Further reduced padding for tighter spacing */
+        font-size: 0.65rem; /* Smaller font */
+        padding: 0.05rem 0.2rem; /* Minimal padding */
         line-height: 1;
         margin: 0;
     }
     .theme-icon {
-        width: 20px;
-        height: 20px;
+        width: 18px;
+        height: 18px;
     }
     .headline {
         font-size: 2rem;
