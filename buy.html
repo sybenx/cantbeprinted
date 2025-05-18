@@ -20,14 +20,23 @@
     <style>
         .main-content {
             padding: 5rem 1rem 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
         }
         @media (max-width: 768px) {
             .main-content {
-                padding-top: 80px; /* Adjust for header height on mobile */
+                padding-top: 90px; /* Adjust for smaller header (~80px) */
+            }
+            .header {
+                height: 80px; /* Smaller header height */
+            }
+            .nav-container {
+                padding: 0.5rem 1rem;
+            }
+            .logo-img {
+                max-width: 150px; /* Smaller logo */
+            }
+            .nav-links a, .theme-toggle {
+                font-size: 0.9rem; /* Smaller nav text */
+                padding: 0.3rem 0.5rem;
             }
         }
         .hero-title {
@@ -76,20 +85,25 @@
         .qr-box {
             text-align: center;
             width: 140px;
-            min-height: 160px; /* Ensure equal height */
+            min-height: 160px;
         }
         .qr {
             width: 120px;
             border-radius: 0.5rem;
             display: block;
             margin: 0 auto 0.5rem;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .qr:hover {
+            transform: scale(1.05);
         }
         .qr-label {
             font-size: 0.9rem;
             color: var(--text-color);
             margin-bottom: 0.5rem;
             line-height: 1.2;
-            min-height: 36px; /* Ensure equal label height */
+            min-height: 36px;
         }
         .qr-note {
             font-size: 0.9rem;
@@ -170,8 +184,8 @@
     <header class="header">
         <div class="nav-container">
             <a href="/" class="logo" aria-label="Can’t Be Printed">
-                <img src="/logo/Can't-logo-wide-white.svg" alt="Can’t Be Printed logo" class="logo-img logo-white">
-                <img src="/logo/Can't-logo-wide.svg" alt="Can’t Be Printed logo" class="logo-img logo-black">
+                <img src="/logo/Can't-logo-wide-white.svg?v=1" alt="Can’t Be Printed logo" class="logo-img logo-white">
+                <img src="/logo/Can't-logo-wide.svg?v=1" alt="Can’t Be Printed logo" class="logo-img logo-black">
             </a>
             <nav class="nav-links">
                 <a href="/">Home</a>
@@ -202,11 +216,15 @@
                 <div class="qr-container">
                     <div class="qr-box">
                         <div class="qr-label">Referral ($5 bonus)</div>
-                        <img src="/images/cashappqr.png" class="qr" alt="Cash App Referral QR Code" style="background: var(--background); border:1px solid #00D632;">
+                        <a href="https://cash.app/app/KSJSKCW" aria-label="Cash App Referral Link">
+                            <img src="/images/cashappqr.png" class="qr" alt="Cash App Referral QR Code" style="background: var(--background); border:1px solid #00D632;">
+                        </a>
                     </div>
                     <div class="qr-box">
                         <div class="qr-label">Direct Link</div>
-                        <img src="/images/cashapp_direct_qr.png" class="qr" alt="Cash App Direct QR Code" style="background: var(--background); border:1px solid #00D632;">
+                        <a href="https://cash.app/app/" aria-label="Cash App Direct Link">
+                            <img src="/images/cashapp_direct_qr.png" class="qr" alt="Cash App Direct QR Code" style="background: var(--background); border:1px solid #00D632;">
+                        </a>
                     </div>
                 </div>
                 <div class="button-container">
@@ -222,11 +240,15 @@
                 <div class="qr-container">
                     <div class="qr-box">
                         <div class="qr-label">Referral (Fee-Free $500 Trade)</div>
-                        <img src="/images/strikeqrwhite.png" class="qr" alt="Strike Referral QR Code" style="background: black; border:1px solid gray;">
+                        <a href="https://invite.strike.me/BNUI2T" aria-label="Strike Referral Link">
+                            <img src="/images/strikeqrwhite.png" class="qr" alt="Strike Referral QR Code" style="background: black; border:1px solid gray;">
+                        </a>
                     </div>
                     <div class="qr-box">
                         <div class="qr-label">Direct Link</div>
-                        <img src="/images/strike_direct_qr.png" class="qr" alt="Strike Direct QR Code" style="background: black; border:1px solid gray;">
+                        <a href="https://invite.strike.me/" aria-label="Strike Direct Link">
+                            <img src="/images/strike_direct_qr.png" class="qr" alt="Strike Direct QR Code" style="background: black; border:1px solid gray;">
+                        </a>
                     </div>
                 </div>
                 <div class="button-container">

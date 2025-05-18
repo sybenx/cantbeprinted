@@ -28,7 +28,20 @@
         }
         @media (max-width: 768px) {
             .main-content {
-                padding-top: 80px; /* Adjust for header height on mobile */
+                padding-top: 90px; /* Adjust for smaller header (~80px) */
+            }
+            .header {
+                height: 80px;
+            }
+            .nav-container {
+                padding: 0.5rem 1rem;
+            }
+            .logo-img {
+                max-width: 150px;
+            }
+            .nav-links a, .theme-toggle {
+                font-size: 0.9rem;
+                padding: 0.3rem 0.5rem;
             }
         }
         .video-section {
@@ -106,8 +119,8 @@
     <header class="header">
         <div class="nav-container">
             <a href="/" class="logo" aria-label="Can’t Be Printed">
-                <img src="/logo/Can’t-logo-wide-white.svg" alt="Can’t Be Printed logo" class="logo-img logo-white">
-                <img src="/logo/Can’t-logo-wide.svg" alt="Can’t Be Printed logo" class="logo-img logo-black">
+                <img src="/logo/Can't-logo-wide-white.svg?v=1" alt="Can’t Be Printed logo" class="logo-img logo-white">
+                <img src="/logo/Can't-logo-wide.svg?v=1" alt="Can’t Be Printed logo" class="logo-img logo-black">
             </a>
             <nav class="nav-links">
                 <a href="/">Home</a>
