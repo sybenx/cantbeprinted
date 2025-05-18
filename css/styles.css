@@ -68,6 +68,16 @@ body {
 .logo-img {
     max-width: 200px;
     height: auto;
+    display: none; /* Hide by default */
+    transition: opacity 0.3s ease; /* Smooth transition */
+}
+
+:root[data-theme="light"] .logo-black {
+    display: block; /* Show colored logo in light theme */
+}
+
+:root[data-theme="dark"] .logo-white {
+    display: block; /* Show white logo in dark theme */
 }
 
 .nav-links {
