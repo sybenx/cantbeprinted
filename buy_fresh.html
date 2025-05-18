@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" class="dark" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Buy Bitcoin easily with Cash App or cheaply with Strike">
+    <title aria-label="Start Your Bitcoin Journey">Can’t Be Printed | Buy Bitcoin</title>
+
+    <!-- Favicon links -->
+    <link rel="icon" type="image/png" href="/favicon/favicon-48x48.png" sizes="48x48" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Can’t Be Printed" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    
+    <link rel="stylesheet" href="/css/styles.css?v=1">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        .main-content {
+            padding: 6rem 1rem 3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #FF9500;
+        }
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--footer-text);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            text-align: center;
+        }
+        .app-section {
+            max-width: 600px;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: var(--card-bg);
+            border-radius: 1rem;
+            width: 100%;
+            text-align: center;
+        }
+        .app-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+        .cashapp-title {
+            color: #00D632;
+        }
+        .strike-title {
+            color: #ffffff;
+        }
+        .app-description {
+            font-size: 1rem;
+            color: var(--footer-text);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        .qr-toggle {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            background: var(--card-bg);
+            color: var(--text-color);
+            border: 1px solid var(--card-text);
+            border-radius: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 0.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .qr-toggle:hover {
+            background: #FF9500;
+            color: #000000;
+            border-color: #FF9500;
+        }
+        .qr {
+            width: 150px;
+            border-radius: 0.5rem;
+            margin: 1rem auto;
+            display: block;
+        }
+        .qr-note {
+            font-size: 0.9rem;
+            color: var(--footer-text);
+            margin: 0.5rem 0;
+        }
+        .download-link {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: #FF9500;
+            color: #000000;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            margin: 0.5rem 0;
+            transition: all 0.3s ease;
+        }
+        .download-link:hover {
+            background: var(--primary-color);
+            color: var(--background);
+        }
+        @media (max-width: 768px) {
+            .app-section {
+                padding: 1.2rem;
+            }
+            .hero-title {
+                font-size: 2rem;
+            }
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            .qr {
+                width: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <a href="/" class="logo" aria-label="Can’t Be Printed">
+                <img src="/logo/Can't-logo-wide-white.svg" alt="Can’t Be Printed logo" class="logo-img logo-white">
+                <img src="/logo/Can't-logo-wide.svg" alt="Can’t Be Printed logo" class="logo-img logo-black">
+            </a>
+            <nav class="nav-links">
+                <a href="/">Home</a>
+                <a href="/learn.html">Learn</a>
+                <a href="/bitcoin.html">Bitcoin</a>
+                <a href="/buy.html">Buy</a>
+                <a href="/about.html">About</a>
+                <button class="theme-toggle" aria-label="Toggle theme" role="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="theme-icon">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="text-container">
+            <section class="hero-section">
+                <h1 class="hero-title">Buy Bitcoin</h1>
+                <p class="hero-subtitle">Choose the easiest way with Cash App or the cheapest with Strike to start your Bitcoin journey.</p>
+            </section>
+
+            <section class="app-section">
+                <h2 class="app-title cashapp-title">Cash App</h2>
+                <p class="app-description">The easiest way to buy Bitcoin—I use it for direct deposits from every paycheck. Start with as little as $1, but note the $2,000 daily withdrawal limit.</p>
+                <p class="qr-note">Support me with the referral link (you get $5!) or use the direct link:</p>
+                <img id="cashapp-qr" src="/images/cashappqr.svg" class="qr" alt="Cash App Referral QR Code" style="background: var(--background); border:1px solid #00D632;">
+                <button class="qr-toggle" onclick="toggleQr('cashapp')">Switch to Direct Link</button>
+                <a href="https://cash.app/app/KSJSKCW" class="download-link" id="cashapp-link">Download with Referral ($5 bonus)</a>
+            </section>
+
+            <section class="app-section">
+                <h2 class="app-title strike-title">Strike</h2>
+                <p class="app-description">The cheapest option, perfect for large Bitcoin purchases with low fees and no withdrawal limits, using the Lightning Network.</p>
+                <p class="qr-note">Support me with the referral link (trade $500 free!) or use the direct link:</p>
+                <img id="strike-qr" src="/images/strikeqrwhite.svg" class="qr" alt="Strike Referral QR Code" style="background: black; border:1px solid gray;">
+                <button class="qr-toggle" onclick="toggleQr('strike')">Switch to Direct Link</button>
+                <a href="https://invite.strike.me/BNUI2T" class="download-link" id="strike-link">Download with Referral ($500 free trade)</a>
+            </section>
+
+            <div class="button-container">
+                <a href="/bitcoin.html" class="cta-button">Learn About Bitcoin</a>
+                <a href="/about.html" class="secondary-button">Our Story</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <span class="footer-text">© <span id="currentYear"></span> Can’t Be Printed. No sales pitch here—just facts about inflation and solutions. Created by <a href="https://njump.me/npub175rnagjgxtvwvfrdytkqkkn4h062zf2cuwkx0jc8xc9nga895s8qgsef5g">Aaron Herbst</a></span>
+    </footer>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.querySelector('.theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+
+        // Load saved theme on page load
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+
+        // Set current year in footer
+        document.addEventListener("DOMContentLoaded", function() {
+            const yearSpan = document.getElementById("currentYear");
+            const currentYear = new Date().getFullYear();
+            if (yearSpan) {
+                yearSpan.textContent = currentYear;
+            }
+        });
+
+        // QR code toggle
+        function toggleQr(app) {
+            const cashappQr = document.getElementById('cashapp-qr');
+            const cashappLink = document.getElementById('cashapp-link');
+            const strikeQr = document.getElementById('strike-qr');
+            const strikeLink = document.getElementById('strike-link');
+
+            if (app === 'cashapp') {
+                if (cashappQr.src.includes('cashappqr.svg')) {
+                    cashappQr.src = '/images/cashapp_direct_qr.svg';
+                    cashappQr.alt = 'Cash App Direct QR Code';
+                    cashappLink.href = 'https://cash.app/app/';
+                    cashappLink.textContent = 'Download Cash App';
+                } else {
+                    cashappQr.src = '/images/cashappqr.svg';
+                    cashappQr.alt = 'Cash App Referral QR Code';
+                    cashappLink.href = 'https://cash.app/app/KSJSKCW';
+                    cashappLink.textContent = 'Download with Referral ($5 bonus)';
+                }
+            } else if (app === 'strike') {
+                if (strikeQr.src.includes('strikeqrwhite.svg')) {
+                    strikeQr.src = '/images/strike_direct_qr.svg';
+                    strikeQr.alt = 'Strike Direct QR Code';
+                    strikeLink.href = 'https://invite.strike.me/';
+                    strikeLink.textContent = 'Download Strike';
+                } else {
+                    strikeQr.src = '/images/strikeqrwhite.svg';
+                    strikeQr.alt = 'Strike Referral QR Code';
+                    strikeLink.href = 'https://invite.strike.me/BNUI2T';
+                    strikeLink.textContent = 'Download with Referral ($500 free trade)';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
