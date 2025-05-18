@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Explore practical solutions to protect your wealth from inflation">
-    <title aria-label="Can't Be Printed">Can’t Be Printed | Solutions
+    <title aria-label="Can't Be Printed">Can’t Be Printed | Solutions</title>
+    
+    <!-- Favicon links -->
     <link rel="icon" type="image/png" href="/favicon/favicon-48x48.png" sizes="48x48" />
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
     <link rel="shortcut icon" href="/favicon/favicon.ico" />
@@ -19,6 +21,50 @@
 
     <!-- CSS stylesheet -->
     <link rel="stylesheet" href="/css/styles.css">
+
+    <style>
+        .comparison-table th {
+            background-color: #FF9500; /* Orange accent */
+            color: #000000;
+        }
+        .step-list {
+            text-align: left;
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+            counter-reset: steps;
+        }
+        .step-list li {
+            margin-bottom: 1rem;
+            line-height: 1.5;
+            position: relative;
+            padding-left: 2rem;
+        }
+        .step-list li::before {
+            counter-increment: steps;
+            content: counter(steps);
+            position: absolute;
+            width: 1.5rem;
+            height: 1.5rem;
+            background: #FF9500; /* Orange accent */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+            left: -1.4rem;
+            color: #000000;
+        }
+        .app-card {
+            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+        }
+        .app-card:hover {
+            box-shadow: 0 10px 20px rgba(255, 149, 0, 0.2); /* Orange shadow */
+        }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -30,7 +76,8 @@
             <nav class="nav-links">
                 <a href="/">Home</a>
                 <a href="/learn">Learn</a>
-                <a href="/invest">Invest</a>
+                <a href="/buy">Buy</a>
+                <a href="/hope">Hope</a>
                 <a href="/solutions">Solutions</a>
                 <a href="/technical">Technical</a>
                 <button class="theme-toggle" aria-label="Toggle theme" role="button">
@@ -60,13 +107,15 @@
             <section class="section">
                 <h2>How to Get Started</h2>
                 <p>Begin with these steps to build a resilient portfolio:</p>
-                <ol>
-                    <li><strong>Assess Your Goals:</strong> Decide your timeline and risk tolerance (e.g., retirement in 20 years vs. buying a home in 5).</li>
-                    <li><strong>Start Small:</strong> Open a brokerage account (e.g., Vanguard, Fidelity) and invest in low-cost ETFs or TIPS with as little as $100.</li>
-                    <li><strong>Diversify:</strong> Spread investments across stocks, bonds, and real estate to balance risk and reward.</li>
-                    <li><strong>Learn Continuously:</strong> Read books like <em>The Intelligent Investor</em> or explore Bitcoin via <em>The Bitcoin Standard</em>.</li>
-                    <li><strong>Stay Disciplined:</strong> Invest regularly (e.g., monthly) and avoid panic-selling during market dips.</li>
-                </ol>
+                <div class="app-card">
+                    <ol class="step-list">
+                        <li>Assess your goals: Decide your timeline and risk tolerance (e.g., retirement in 20 years vs. buying a home in 5).</li>
+                        <li>Start small: Open a brokerage account (e.g., Vanguard, Fidelity) and invest in low-cost ETFs or TIPS with as little as $100.</li>
+                        <li>Diversify: Spread investments across stocks, bonds, and real estate to balance risk and reward.</li>
+                        <li>Learn continuously: Read books like <em>The Intelligent Investor</em> or explore Bitcoin via <em>The Bitcoin Standard</em>.</li>
+                        <li>Stay disciplined: Invest regularly (e.g., monthly) and avoid panic-selling during market dips.</li>
+                    </ol>
+                </div>
             </section>
             <div class="visual-container">
                 <table class="comparison-table">
@@ -113,7 +162,7 @@
                 </table>
             </div>
             <div class="button-container">
-                <a href="/invest" class="cta-button">Start Investing</a>
+                <a href="/buy" class="cta-button">Start Investing</a>
                 <a href="/learn" class="secondary-button">Learn More</a>
             </div>
         </div>
