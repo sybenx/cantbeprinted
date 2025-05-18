@@ -105,7 +105,7 @@ body {
 }
 
 .main-content {
-    padding: 10rem 1rem 2rem; /* Increased padding-top to clear header */
+    padding: 10rem 1rem 2rem; /* Ensures titles clear header */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -241,34 +241,36 @@ body {
         padding-top: 10rem; /* Consistent with desktop to clear header */
     }
     .header {
-        max-height: 80px; /* Constrain header height */
+        max-height: 100px; /* Balanced height for mobile */
         overflow: hidden;
     }
     .nav-container {
-        padding: 0.8rem 1rem 0.05rem 1rem; /* Tighter padding */
+        padding: 1rem 1rem 0.2rem 1rem; /* Balanced padding */
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
     .logo-img {
-        max-width: 100px; /* Smaller logo to save space */
+        max-width: 120px; /* Slightly larger logo */
+        max-height: 50px; /* Constrain height */
+        width: auto;
     }
     .nav-links {
         display: flex;
         flex-wrap: wrap;
-        gap: 0;
+        gap: 0.2rem; /* Small gap for spacing */
         align-items: center;
         overflow: hidden;
     }
     .nav-links a, .theme-toggle {
-        font-size: 0.65rem; /* Smaller font */
-        padding: 0.05rem 0.2rem; /* Minimal padding */
-        line-height: 1;
+        font-size: 0.9rem; /* Larger, readable font */
+        padding: 0.3rem 0.5rem; /* Touch-friendly padding */
+        line-height: 1.2;
         margin: 0;
     }
     .theme-icon {
-        width: 18px;
-        height: 18px;
+        width: 22px; /* Slightly larger icon */
+        height: 22px;
     }
     .headline {
         font-size: 2rem;
