@@ -238,14 +238,14 @@ body {
 
 @media (max-width: 768px) {
     .main-content {
-        padding-top: 80px; /* Header height (70px) + buffer (10px) */
+        padding-top: 110px; /* Adjusted to ensure content clears shorter header */
     }
     .header {
-        height: 70px;
+        height: 100px; /* Reduced from 133px to ~100px */
         overflow: hidden;
     }
     .nav-container {
-        padding: 1.25rem 1.25rem 0.2rem 1.25rem; /* Top, right, bottom, left */
+        padding: 1rem 1.25rem 0.1rem 1.25rem; /* Reduced bottom padding */
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -262,7 +262,7 @@ body {
     }
     .nav-links a, .theme-toggle {
         font-size: 0.7rem;
-        padding: 0.1rem 0.3rem;
+        padding: 0.05rem 0.2rem; /* Further reduced padding for tighter spacing */
         line-height: 1;
         margin: 0;
     }
