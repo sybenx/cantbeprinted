@@ -23,7 +23,27 @@
     <link rel="stylesheet" href="/css/styles.css?v=1">
 
     <style>
-        /* Page-specific styles for /learn.html */
+        .main-content {
+            padding: 5rem 1rem 2rem;
+        }
+        @media (max-width: 768px) {
+            .main-content {
+                padding-top: 90px; /* Adjust for smaller header (~80px) */
+            }
+            .header {
+                height: 80px;
+            }
+            .nav-container {
+                padding: 0.5rem 1rem;
+            }
+            .logo-img {
+                max-width: 150px;
+            }
+            .nav-links a, .theme-toggle {
+                font-size: 0.9rem;
+                padding: 0.3rem 0.5rem;
+            }
+        }
         .history-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

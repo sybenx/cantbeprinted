@@ -16,9 +16,43 @@
     
     <link rel="stylesheet" href="/css/styles.css?v=1">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
+    
     <style>
-        /* Page-specific styles for /buy.html */
+        .main-content {
+            padding: 5rem 1rem 2rem;
+        }
+        @media (max-width: 768px) {
+            .main-content {
+                padding-top: 90px; /* Adjust for smaller header (~80px) */
+            }
+            .header {
+                height: 80px; /* Smaller header height */
+            }
+            .nav-container {
+                padding: 0.5rem 1rem;
+            }
+            .logo-img {
+                max-width: 150px; /* Smaller logo */
+            }
+            .nav-links a, .theme-toggle {
+                font-size: 0.9rem; /* Smaller nav text */
+                padding: 0.3rem 0.5rem;
+            }
+        }
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: #FF9500;
+        }
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--footer-text);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+            text-align: center;
+        }
         .app-section {
             max-width: 600px;
             margin: 1rem auto;
@@ -76,6 +110,13 @@
             color: var(--footer-text);
             margin: 0.5rem 0;
         }
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin: 0.5rem 0;
+        }
         .download-link {
             display: inline-block;
             padding: 0.7rem 1.4rem;
@@ -109,6 +150,12 @@
         @media (max-width: 768px) {
             .app-section {
                 padding: 1rem;
+            }
+            .hero-title {
+                font-size: 2rem;
+            }
+            .hero-subtitle {
+                font-size: 1rem;
             }
             .qr {
                 width: 100px;
