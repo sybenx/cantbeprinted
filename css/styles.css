@@ -210,7 +210,9 @@ body {
     font-size: 3.5rem;
     font-weight: 800;
     letter-spacing: -1px;
-    margin-bottom: 1rem;
+    margin: 0 auto 1rem;
+    max-width: 900px;
+    text-wrap: balance;
     color: var(--text-color);
 }
 
