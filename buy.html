@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Learn how to buy and hold Bitcoin - perfect for beginners">
-    <title aria-label="Start Your Bitcoin Journey">Start Your ₿itcoin Journey</title>
+    <title>Buy Bitcoin | Can't ₿e Printed</title>
 
     <!-- Favicon links -->
     <link rel="icon" type="image/png" href="/favicon/favicon-48x48.png" sizes="48x48" />
@@ -290,13 +290,31 @@
             box-shadow: 0 10px 20px rgba(255, 149, 0, 0.2);
         }
 
-        .book-button-jade {
-            background-color: rgba(0, 176, 147, 0.05);
-            border: 1px solid #00B093;
+        .book-button-bitkey {
+            background-color: var(--card-bg);
+            border: 1px solid var(--text-color);
         }
 
-        .book-button-jade:hover {
-            background-color: #00B093;
+        .book-button-bitkey:hover {
+            background-color: var(--text-color);
+            color: var(--background);
+        }
+
+        /* The Bitkey wordmark is black on transparent; invert it on dark backgrounds */
+        .book-image-bitkey {
+            width: 90px;
+        }
+
+        :root[data-theme="dark"] .book-image-bitkey {
+            filter: invert(1);
+        }
+
+        :root[data-theme="dark"] .book-button-bitkey:hover .book-image-bitkey {
+            filter: none;
+        }
+
+        :root[data-theme="light"] .book-button-bitkey:hover .book-image-bitkey {
+            filter: invert(1);
         }
 
         .book-button-aqua {
@@ -384,13 +402,13 @@
         <section class="hero-section">
             <h1 class="hero-title">Start Your Bitcoin Journey</h1>
             <p class="hero-subtitle">
-                Ready to buy your first Bitcoin? We'll show you the easiest ways to get started.
+                Ready to buy your first Bitcoin? Here are the easiest ways to get started. These are the two apps I actually use.
             </p>
         </section>
 
         <section class="note-section">
             <h2 style="color: var(--primary-color); margin-bottom: 1rem;">What is HODLing?</h2>
-            <p>HODL stands for "Hold On for Dear Life" - it means buying Bitcoin and keeping it safe for the long term. Think of it like a savings account, but for the digital age. Instead of trying to trade or time the market, HODLers simply save regularly and wait patiently.</p>
+            <p>HODL comes from a famous 2013 forum typo of "hold". It means buying Bitcoin and keeping it for the long term. Think of it as long-term saving, not trading. Instead of trying to time the market, HODLers simply save regularly and wait patiently.</p>
         </section>
 
         <section class="buying-options">
@@ -404,7 +422,7 @@
                     <li>Already have Cash App? You're halfway there!</li>
                     <li>Buy Bitcoin with as little as $1</li>
                     <li>Instant deposits from your bank</li>
-                    <li>Limited to $2,000 Bitcoin withdrawal per day</li>
+                    <li>Daily Bitcoin withdrawal limits apply (check the app for the current amount)</li>
                 </ul>
 
                 <h4 style="color: #00D632; margin: 2rem 0 1rem;">Getting Started</h4>
@@ -419,7 +437,7 @@
                 <div>
                     <div class="qr-box" style="border: 1px solid #00d632; background: #00d632;">
                         <a href="https://cash.app/app/KSJSKCW" class="download-button cashapp-button-inverted">Download with Referral</a>
-                        <div class="cash" style="margin: 1rem 0 1rem; color: #4d4d4d; text-decoration: none;">use my referral code to support me and get $5: KSJSKCW</div>
+                        <div class="cash" style="margin: 1rem 0 1rem; color: #4d4d4d; text-decoration: none;">Use my referral code KSJSKCW. It supports this site, and Cash App usually gives you a sign-up bonus.</div>
                             <img src="/images/cashappqr.svg" class="qr" alt="Cash App QR Code" style="background: var(--background); border:1px solid #00D632;">
                     </div>
                 </div>
@@ -434,7 +452,7 @@
                 
                 <h4 style="color: white; margin: 2rem 0 1rem;">Why Choose Strike?</h4>
                 <ul class="features-list" style="color: white;">
-                    <li>Lowest fees in the industry</li>
+                    <li>Among the lowest fees you'll find</li>
                     <li>Lightning-fast Bitcoin transfers</li>
                     <li>Clean, simple interface</li>
                     <li>No Bitcoin withdrawal limits</li>
@@ -452,8 +470,8 @@
                 <div>
                     <div class="qr-box" style="border: 1px solid white; background: white">
                         <a href="https://invite.strike.me/BNUI2T" class="download-button strike-button">Download with Referral</a>
-                        <div class="footer-text qr" style="color: #4d4d4d; margin: 1rem 0 1rem; text-decoration: none;">use my referral code to support me and trade $100 free: BNUI2T</div>
-                            <img src="/images/strikeqrwhite.svg" class="qr" style="border: 1px solid gray; background: black;">
+                        <div class="footer-text qr" style="color: #4d4d4d; margin: 1rem 0 1rem; text-decoration: none;">Use my referral code BNUI2T. It supports this site, and Strike usually waives fees on your first trades.</div>
+                            <img src="/images/strikeqrwhite.svg" class="qr" alt="Strike referral QR code" style="border: 1px solid gray; background: black;">
                     </div>
                 </div>
             </div>
@@ -471,11 +489,11 @@
                     <div class="book-button-subtitle">Easy to use phone wallet</div>
                 </div>
             </a>
-            <a href="https://store.blockstream.com/?code=nzOJZMjiRCSX" class="book-button book-button-jade">
-                <img src="/images/bsjade.png" alt="Blockstream Jade" class="book-image">
+            <a href="https://bitkey.world" class="book-button book-button-bitkey">
+                <img src="/images/bitkey.svg" alt="Bitkey" class="book-image book-image-bitkey">
                 <div class="book-text-container">
-                    <div class="book-button-title">Blockstream Jade (referral)</div>
-                    <div class="book-button-subtitle">Highly secure device vault</div>
+                    <div class="book-button-title">Bitkey</div>
+                    <div class="book-button-subtitle">Hardware wallet with built-in recovery</div>
                 </div>
             </a>
         </section>
