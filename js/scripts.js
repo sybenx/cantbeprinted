@@ -81,3 +81,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const animatedElements = document.querySelectorAll('.animate-on-scroll');
     animatedElements.forEach(element => observer.observe(element));
 });
+// Keep the footer copyright year current
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('#currentYear').forEach(function(el) {
+        el.textContent = new Date().getFullYear();
+    });
+});
