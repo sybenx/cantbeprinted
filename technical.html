@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Understanding the technical foundations of Bitcoin">
-    <title aria-label="Can't Be Printed">Can't ₿e Printed - Technical</title>
+    <meta name="description" content="How Bitcoin works in plain language: the 21 million cap, nodes, mining, blocks, keys and transactions">
+    <title>How Bitcoin Works | Can't ₿e Printed</title>
     
     <!-- Favicon links -->
     <link rel="icon" type="image/png" href="/favicon/favicon-48x48.png" sizes="48x48" />
@@ -188,6 +188,11 @@
             font-size: 1.5rem;
         }
 
+        .technical-card p + p,
+        .technical-card ul + p {
+            margin-top: 1rem;
+        }
+
         .technical-card ul {
             margin-left: 1.5rem;
             margin-top: 0.5rem;
@@ -253,6 +258,12 @@
             font-size: 1.5rem;
             font-style: italic;
             line-height: 1.6;
+        }
+
+        .quote-author {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-top: 1rem;
         }
 
         .cta-section {
@@ -384,9 +395,9 @@
 
     <main class="main-content">
         <section class="hero-section">
-            <h1 class="hero-title">Technical Foundations</h1>
+            <h1 class="hero-title">How Bitcoin Works</h1>
             <p class="hero-subtitle">
-                Understanding the revolutionary technology that powers Bitcoin - from cryptographic principles to consensus mechanisms.
+                The rules that make Bitcoin impossible to print, in plain language. No maths degree needed.
             </p>
         </section>
 
@@ -396,70 +407,67 @@
                     class="responsive-iframe"
                     src="https://www.youtube.com/embed/yRlnHVHE18k?&t=2540&modestbranding=1&controls=1&showinfo=0&rel=0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
+                    allowfullscreen
+                    title="How Bitcoin works, explained">
                 </iframe>
             </div>
         </section>
 
         <section class="whitepaper-section">
-            <h2>Bitcoin Whitepaper</h2>
-            <p>Read the original Bitcoin whitepaper by Satoshi Nakamoto that started it all.</p>
-            <a href="https://www.bitcoin.com/satoshi-archive/whitepaper/" class="whitepaper-button">Read the Whitepaper</a>
+            <h2>Start at the Source</h2>
+            <p>Bitcoin was introduced in a nine-page paper published in 2008 by a pseudonymous author, Satoshi Nakamoto. Everything on this page is a plain-language version of what that paper describes.</p>
+            <a href="https://bitcoin.org/bitcoin.pdf" class="whitepaper-button">Read the Whitepaper</a>
         </section>
 
         <section class="technical-grid">
             <div class="technical-card">
-                <h3>Proof of Work</h3>
-                <p>Bitcoin's consensus mechanism requires miners to solve complex mathematical problems, creating a competitive process that secures the network through computational work.</p>
-                <div class="code-block">Target = maxTarget / difficulty
-hash(block_header) <= Target</div>
+                <h3>Why It Can't Be Printed</h3>
+                <p>There will only ever be 21 million bitcoin. New coins enter circulation as a reward to miners, and that reward is cut in half every 210,000 blocks, roughly every four years. The April 2024 halving took it to 3.125 bitcoin per block. The schedule is written into the software that every participant runs, so nobody can change it alone.</p>
             </div>
 
             <div class="technical-card">
-                <h3>Blockchain Structure</h3>
-                <p>Each block contains:</p>
+                <h3>Nodes: The Rule-Checkers</h3>
+                <p>A node is a computer running the Bitcoin software. Anyone can run one. Nodes check every transaction and every block against the rules, and they simply reject anything that breaks them, including a block that tries to create extra coins. Thousands of independent nodes doing this is what enforces the rules, not any company or government.</p>
+            </div>
+
+            <div class="technical-card">
+                <h3>Mining and Proof of Work</h3>
+                <p>Miners bundle waiting transactions into a candidate block, then hash it billions of times a second, changing a number each time, until they find a hash below a target. There is no shortcut: it is guessing, at enormous scale. The difficulty adjusts every 2,016 blocks so a block is found about every ten minutes. The electricity spent is what makes rewriting history impractical.</p>
+                <div class="code-block">SHA256(SHA256(block_header)) &lt; target</div>
+            </div>
+
+            <div class="technical-card">
+                <h3>Blocks and the Chain</h3>
+                <p>A block is a header plus a list of transactions. The header holds:</p>
                 <ul>
-                    <li>Block header</li>
-                    <li>Previous block hash</li>
-                    <li>Merkle root</li>
-                    <li>Timestamp</li>
-                    <li>Nonce</li>
-                    <li>Transaction data</li>
+                    <li>The hash of the previous block</li>
+                    <li>A fingerprint of this block's transactions (the merkle root)</li>
+                    <li>A timestamp</li>
+                    <li>The current target</li>
+                    <li>The number the miner changed to find a valid hash (the nonce)</li>
                 </ul>
+                <p>Because each header contains the hash of the one before it, altering an old block changes its hash and invalidates every block after it.</p>
             </div>
 
             <div class="technical-card">
-                <h3>Mining Algorithm</h3>
-                <p>SHA-256 hash function is used twice (double-SHA256) to generate block hashes. Miners must find a nonce that produces a hash below the target difficulty.</p>
-                <div class="code-block">hash = SHA256(SHA256(blockHeader))</div>
+                <h3>Keys and Ownership</h3>
+                <p>Owning bitcoin means holding a private key: a large random number. From it your wallet derives a public key and an address. You share the address to receive; you use the private key to sign a transaction that spends. Anyone can check a signature, but nobody can forge one without the key. That is why "not your keys, not your coins" matters.</p>
             </div>
 
             <div class="technical-card">
-                <h3>Transaction Structure</h3>
-                <p>Bitcoin transactions use the UTXO (Unspent Transaction Output) model, where each transaction consumes previous outputs and creates new ones.</p>
-                <div class="code-block">tx_hash = SHA256(
-  version
-  input_count
-  inputs
-  output_count
-  outputs
-  locktime
-)</div>
+                <h3>Transactions</h3>
+                <p>Bitcoin has no account balances. Each transaction spends whole outputs from earlier transactions and creates new ones, like handing over a note and getting change back. The unspent outputs sitting at your addresses are your balance. Every node can trace each coin all the way back to the block where it was mined.</p>
             </div>
 
             <div class="technical-card">
-                <h3>Public Key Cryptography</h3>
-                <p>Bitcoin uses elliptic curve cryptography (secp256k1) for creating key pairs. Public keys are used to generate addresses, while private keys sign transactions.</p>
-            </div>
-
-            <div class="technical-card">
-                <h3>Network Protocol</h3>
-                <p>Bitcoin's P2P network uses a gossip protocol for transaction and block propagation, with each node maintaining connections to multiple peers.</p>
+                <h3>The Network</h3>
+                <p>There is no central server. Nodes connect directly to each other and pass transactions and blocks along peer to peer, so a new block reaches the whole network in seconds. Take any node offline and the rest carry on. To stop Bitcoin you would have to stop all of them.</p>
             </div>
         </section>
 
         <section class="quote-section">
-            <p class="quote-text">"Bitcoin uses a simple but powerful scripting system for transactions."</p>
+            <p class="quote-text">"A purely peer-to-peer version of electronic cash would allow online payments to be sent directly from one party to another without going through a financial institution."</p>
+            <p class="quote-author">Satoshi Nakamoto, Bitcoin whitepaper, 2008</p>
         </section>
 
         <section class="video-section">
@@ -468,7 +476,8 @@ hash(block_header) <= Target</div>
                     class="responsive-iframe"
                     src="https://www.youtube.com/embed/1rtX1Za_PE8?modestbranding=1&controls=1&showinfo=0&rel=0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
+                    allowfullscreen
+                    title="Bitcoin explained in more depth">
                 </iframe>
             </div>
         </section>
